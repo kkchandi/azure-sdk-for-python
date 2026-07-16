@@ -18,6 +18,10 @@ class Snake(_Model):
     :vartype kind: str or ~typetest.model.enumdiscriminator.models.SnakeKind
     :ivar length: Length of the snake. Required.
     :vartype length: int
+    :keyword kind: discriminator property. Required. "cobra"
+    :paramtype kind: str or ~typetest.model.enumdiscriminator.models.SnakeKind
+    :keyword length: Length of the snake. Required.
+    :paramtype length: int
     """
 
     __mapping__: dict[str, _Model] = {}
@@ -52,6 +56,8 @@ class Cobra(Snake, discriminator="cobra"):
     :vartype length: int
     :ivar kind: discriminator property. Required. Species cobra.
     :vartype kind: str or ~typetest.model.enumdiscriminator.models.COBRA
+    :keyword length: Length of the snake. Required.
+    :paramtype length: int
     """
 
     kind: Literal[SnakeKind.COBRA] = rest_discriminator(name="kind", visibility=["read", "create", "update", "delete", "query"])  # type: ignore
@@ -86,6 +92,10 @@ class Dog(_Model):
     :vartype kind: str or ~typetest.model.enumdiscriminator.models.DogKind
     :ivar weight: Weight of the dog. Required.
     :vartype weight: int
+    :keyword kind: discriminator property. Required. "golden"
+    :paramtype kind: str or ~typetest.model.enumdiscriminator.models.DogKind
+    :keyword weight: Weight of the dog. Required.
+    :paramtype weight: int
     """
 
     __mapping__: dict[str, _Model] = {}
@@ -120,6 +130,8 @@ class Golden(Dog, discriminator="golden"):
     :vartype weight: int
     :ivar kind: discriminator property. Required. Species golden.
     :vartype kind: str or ~typetest.model.enumdiscriminator.models.GOLDEN
+    :keyword weight: Weight of the dog. Required.
+    :paramtype weight: int
     """
 
     kind: Literal[DogKind.GOLDEN] = rest_discriminator(name="kind", visibility=["read", "create", "update", "delete", "query"])  # type: ignore

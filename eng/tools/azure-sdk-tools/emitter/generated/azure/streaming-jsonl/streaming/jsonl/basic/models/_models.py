@@ -17,6 +17,8 @@ class Info(_Model):
 
     :ivar desc: Required.
     :vartype desc: str
+    :keyword desc: Required.
+    :paramtype desc: str
     """
 
     desc: str = rest_field(visibility=["read", "create", "update", "delete", "query"])

@@ -20,6 +20,8 @@ class SecondClientResult(_Model):
 
     :ivar type: Required. "second"
     :vartype type: str or ~client.clientnamespace.second.sub.models.SecondClientEnumType
+    :keyword type: Required. "second"
+    :paramtype type: str or ~client.clientnamespace.second.sub.models.SecondClientEnumType
     """
 
     type: Union[str, "_sub_models2.SecondClientEnumType"] = rest_field(

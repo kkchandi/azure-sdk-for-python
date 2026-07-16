@@ -18,6 +18,8 @@ class DefaultDurationProperty(_Model):
 
     :ivar value: Required.
     :vartype value: ~datetime.timedelta
+    :keyword value: Required.
+    :paramtype value: ~datetime.timedelta
     """
 
     value: datetime.timedelta = rest_field(visibility=["read", "create", "update", "delete", "query"])
@@ -46,6 +48,8 @@ class Float64MillisecondsDurationProperty(_Model):
 
     :ivar value: Required.
     :vartype value: ~datetime.timedelta
+    :keyword value: Required.
+    :paramtype value: ~datetime.timedelta
     """
 
     value: datetime.timedelta = rest_field(
@@ -76,6 +80,8 @@ class Float64SecondsDurationProperty(_Model):
 
     :ivar value: Required.
     :vartype value: ~datetime.timedelta
+    :keyword value: Required.
+    :paramtype value: ~datetime.timedelta
     """
 
     value: datetime.timedelta = rest_field(
@@ -106,6 +112,8 @@ class FloatMillisecondsDurationArrayProperty(_Model):
 
     :ivar value: Required.
     :vartype value: list[~datetime.timedelta]
+    :keyword value: Required.
+    :paramtype value: list[~datetime.timedelta]
     """
 
     value: list[datetime.timedelta] = rest_field(
@@ -136,6 +144,8 @@ class FloatMillisecondsDurationProperty(_Model):
 
     :ivar value: Required.
     :vartype value: ~datetime.timedelta
+    :keyword value: Required.
+    :paramtype value: ~datetime.timedelta
     """
 
     value: datetime.timedelta = rest_field(
@@ -166,6 +176,8 @@ class FloatMillisecondsLargerUnitDurationProperty(_Model):  # pylint: disable=na
 
     :ivar value: Required.
     :vartype value: ~datetime.timedelta
+    :keyword value: Required.
+    :paramtype value: ~datetime.timedelta
     """
 
     value: datetime.timedelta = rest_field(
@@ -196,6 +208,8 @@ class FloatSecondsDurationArrayProperty(_Model):
 
     :ivar value: Required.
     :vartype value: list[~datetime.timedelta]
+    :keyword value: Required.
+    :paramtype value: list[~datetime.timedelta]
     """
 
     value: list[datetime.timedelta] = rest_field(
@@ -226,6 +240,8 @@ class FloatSecondsDurationProperty(_Model):
 
     :ivar value: Required.
     :vartype value: ~datetime.timedelta
+    :keyword value: Required.
+    :paramtype value: ~datetime.timedelta
     """
 
     value: datetime.timedelta = rest_field(
@@ -256,6 +272,8 @@ class FloatSecondsLargerUnitDurationProperty(_Model):
 
     :ivar value: Required.
     :vartype value: ~datetime.timedelta
+    :keyword value: Required.
+    :paramtype value: ~datetime.timedelta
     """
 
     value: datetime.timedelta = rest_field(
@@ -286,6 +304,8 @@ class Int32MillisecondsDurationProperty(_Model):
 
     :ivar value: Required.
     :vartype value: ~datetime.timedelta
+    :keyword value: Required.
+    :paramtype value: ~datetime.timedelta
     """
 
     value: datetime.timedelta = rest_field(
@@ -316,6 +336,8 @@ class Int32MillisecondsLargerUnitDurationProperty(_Model):  # pylint: disable=na
 
     :ivar value: Required.
     :vartype value: ~datetime.timedelta
+    :keyword value: Required.
+    :paramtype value: ~datetime.timedelta
     """
 
     value: datetime.timedelta = rest_field(
@@ -346,6 +368,8 @@ class Int32SecondsDurationProperty(_Model):
 
     :ivar value: Required.
     :vartype value: ~datetime.timedelta
+    :keyword value: Required.
+    :paramtype value: ~datetime.timedelta
     """
 
     value: datetime.timedelta = rest_field(
@@ -376,6 +400,8 @@ class Int32SecondsLargerUnitDurationProperty(_Model):
 
     :ivar value: Required.
     :vartype value: ~datetime.timedelta
+    :keyword value: Required.
+    :paramtype value: ~datetime.timedelta
     """
 
     value: datetime.timedelta = rest_field(
@@ -406,6 +432,8 @@ class ISO8601DurationProperty(_Model):
 
     :ivar value: Required.
     :vartype value: ~datetime.timedelta
+    :keyword value: Required.
+    :paramtype value: ~datetime.timedelta
     """
 
     value: datetime.timedelta = rest_field(visibility=["read", "create", "update", "delete", "query"])

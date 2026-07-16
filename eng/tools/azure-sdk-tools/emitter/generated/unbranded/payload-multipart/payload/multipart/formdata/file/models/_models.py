@@ -12,6 +12,8 @@ class UploadFileArrayRequest(_Model):
 
     :ivar files: Required.
     :vartype files: list[~payload.multipart._utils.utils.FileType]
+    :keyword files: Required.
+    :paramtype files: list[~payload.multipart._utils.utils.FileType]
     """
 
     files: list[FileType] = rest_field(
@@ -42,6 +44,8 @@ class UploadFileRequiredFilenameRequest(_Model):
 
     :ivar file: Required.
     :vartype file: ~payload.multipart._utils.utils.FileType
+    :keyword file: Required.
+    :paramtype file: ~payload.multipart._utils.utils.FileType
     """
 
     file: FileType = rest_field(
@@ -72,6 +76,8 @@ class UploadFileSpecificContentTypeRequest(_Model):
 
     :ivar file: Required.
     :vartype file: ~payload.multipart._utils.utils.FileType
+    :keyword file: Required.
+    :paramtype file: ~payload.multipart._utils.utils.FileType
     """
 
     file: FileType = rest_field(

@@ -17,6 +17,8 @@ class InputOutputRecord(_Model):
 
     :ivar required_prop: Required.
     :vartype required_prop: str
+    :keyword required_prop: Required.
+    :paramtype required_prop: str
     """
 
     required_prop: str = rest_field(name="requiredProp", visibility=["read", "create", "update", "delete", "query"])
@@ -45,6 +47,8 @@ class InputRecord(_Model):
 
     :ivar required_prop: Required.
     :vartype required_prop: str
+    :keyword required_prop: Required.
+    :paramtype required_prop: str
     """
 
     required_prop: str = rest_field(name="requiredProp", visibility=["read", "create", "update", "delete", "query"])
@@ -73,6 +77,8 @@ class OutputRecord(_Model):
 
     :ivar required_prop: Required.
     :vartype required_prop: str
+    :keyword required_prop: Required.
+    :paramtype required_prop: str
     """
 
     required_prop: str = rest_field(name="requiredProp", visibility=["read", "create", "update", "delete", "query"])

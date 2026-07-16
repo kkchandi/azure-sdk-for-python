@@ -20,6 +20,8 @@ class InputModel(_Model):
 
     :ivar name: Required.
     :vartype name: str
+    :keyword name: Required.
+    :paramtype name: str
     """
 
     name: str = rest_field(visibility=["read", "create", "update", "delete", "query"])
@@ -48,6 +50,8 @@ class NamespaceModel(_Model):
 
     :ivar name: Required.
     :vartype name: str
+    :keyword name: Required.
+    :paramtype name: str
     """
 
     name: str = rest_field(visibility=["read", "create", "update", "delete", "query"])
@@ -76,6 +80,8 @@ class NestedNamespaceModel(_Model):
 
     :ivar value: Required.
     :vartype value: str
+    :keyword value: Required.
+    :paramtype value: str
     """
 
     value: str = rest_field(visibility=["read", "create", "update", "delete", "query"])
@@ -107,6 +113,10 @@ class OrphanModel(_Model):
     :vartype model_name: str
     :ivar description: Required.
     :vartype description: str
+    :keyword model_name: Required.
+    :paramtype model_name: str
+    :keyword description: Required.
+    :paramtype description: str
     """
 
     model_name: str = rest_field(name="name", visibility=["read", "create", "update", "delete", "query"])
@@ -138,6 +148,8 @@ class OutputModel(_Model):
 
     :ivar name: Required.
     :vartype name: str
+    :keyword name: Required.
+    :paramtype name: str
     """
 
     name: str = rest_field(visibility=["read", "create", "update", "delete", "query"])
@@ -166,6 +178,8 @@ class ResultModel(_Model):
 
     :ivar name: Required.
     :vartype name: str
+    :keyword name: Required.
+    :paramtype name: str
     """
 
     name: str = rest_field(visibility=["read", "create", "update", "delete", "query"])

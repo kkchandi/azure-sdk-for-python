@@ -11,6 +11,8 @@ class JsonEncodedNameModel(_Model):
 
     :ivar default_name: Pass in true. Required.
     :vartype default_name: bool
+    :keyword default_name: Pass in true. Required.
+    :paramtype default_name: bool
     """
 
     default_name: bool = rest_field(name="wireName", visibility=["read", "create", "update", "delete", "query"])

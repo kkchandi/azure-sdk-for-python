@@ -17,6 +17,8 @@ class ClientModel(_Model):
 
     :ivar default_name: Pass in true. Required.
     :vartype default_name: bool
+    :keyword default_name: Pass in true. Required.
+    :paramtype default_name: bool
     """
 
     default_name: bool = rest_field(name="defaultName", visibility=["read", "create", "update", "delete", "query"])
@@ -45,6 +47,8 @@ class ClientNameAndJsonEncodedNameModel(_Model):
 
     :ivar client_name: Pass in true. Required.
     :vartype client_name: bool
+    :keyword client_name: Pass in true. Required.
+    :paramtype client_name: bool
     """
 
     client_name: bool = rest_field(name="wireName", visibility=["read", "create", "update", "delete", "query"])
@@ -73,6 +77,8 @@ class ClientNameModel(_Model):
 
     :ivar client_name: Pass in true. Required.
     :vartype client_name: bool
+    :keyword client_name: Pass in true. Required.
+    :paramtype client_name: bool
     """
 
     client_name: bool = rest_field(name="defaultName", visibility=["read", "create", "update", "delete", "query"])
@@ -101,6 +107,8 @@ class LanguageClientNameModel(_Model):
 
     :ivar python_name: Pass in true. Required.
     :vartype python_name: bool
+    :keyword python_name: Pass in true. Required.
+    :paramtype python_name: bool
     """
 
     python_name: bool = rest_field(name="defaultName", visibility=["read", "create", "update", "delete", "query"])
@@ -129,6 +137,8 @@ class PythonModel(_Model):
 
     :ivar default_name: Pass in true. Required.
     :vartype default_name: bool
+    :keyword default_name: Pass in true. Required.
+    :paramtype default_name: bool
     """
 
     default_name: bool = rest_field(name="defaultName", visibility=["read", "create", "update", "delete", "query"])

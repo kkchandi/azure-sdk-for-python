@@ -11,6 +11,8 @@ class FloatRequest(_Model):
 
     :ivar temperature: Required.
     :vartype temperature: float
+    :keyword temperature: Required.
+    :paramtype temperature: float
     """
 
     temperature: float = rest_field(visibility=["read", "create", "update", "delete", "query"])

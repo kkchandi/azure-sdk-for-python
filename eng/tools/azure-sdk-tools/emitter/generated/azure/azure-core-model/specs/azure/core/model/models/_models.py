@@ -17,6 +17,8 @@ class AzureEmbeddingModel(_Model):
 
     :ivar embedding: Required.
     :vartype embedding: list[int]
+    :keyword embedding: Required.
+    :paramtype embedding: list[int]
     """
 
     embedding: list[int] = rest_field(visibility=["read", "create", "update", "delete", "query"])

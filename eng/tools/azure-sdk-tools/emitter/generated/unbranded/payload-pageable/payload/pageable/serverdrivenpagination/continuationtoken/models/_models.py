@@ -14,6 +14,8 @@ class RequestHeaderNestedResponseBodyResponseNestedItems(_Model):  # pylint: dis
 
     :ivar pets: Required.
     :vartype pets: list[~payload.pageable.models.Pet]
+    :keyword pets: Required.
+    :paramtype pets: list[~payload.pageable.models.Pet]
     """
 
     pets: list["_models3.Pet"] = rest_field(visibility=["read", "create", "update", "delete", "query"])
@@ -42,6 +44,8 @@ class RequestHeaderNestedResponseBodyResponseNestedNext(_Model):  # pylint: disa
 
     :ivar next_token:
     :vartype next_token: str
+    :keyword next_token:
+    :paramtype next_token: str
     """
 
     next_token: Optional[str] = rest_field(name="nextToken", visibility=["read", "create", "update", "delete", "query"])
@@ -69,6 +73,8 @@ class RequestQueryNestedResponseBodyResponseNestedItems(_Model):  # pylint: disa
 
     :ivar pets: Required.
     :vartype pets: list[~payload.pageable.models.Pet]
+    :keyword pets: Required.
+    :paramtype pets: list[~payload.pageable.models.Pet]
     """
 
     pets: list["_models3.Pet"] = rest_field(visibility=["read", "create", "update", "delete", "query"])
@@ -97,6 +103,8 @@ class RequestQueryNestedResponseBodyResponseNestedNext(_Model):  # pylint: disab
 
     :ivar next_token:
     :vartype next_token: str
+    :keyword next_token:
+    :paramtype next_token: str
     """
 
     next_token: Optional[str] = rest_field(name="nextToken", visibility=["read", "create", "update", "delete", "query"])

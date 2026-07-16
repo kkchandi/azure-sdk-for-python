@@ -11,6 +11,8 @@ class SafeintAsStringProperty(_Model):
 
     :ivar value: Required.
     :vartype value: int
+    :keyword value: Required.
+    :paramtype value: int
     """
 
     value: int = rest_field(visibility=["read", "create", "update", "delete", "query"], format="str")
@@ -39,6 +41,8 @@ class Uint32AsStringProperty(_Model):
 
     :ivar value:
     :vartype value: int
+    :keyword value:
+    :paramtype value: int
     """
 
     value: Optional[int] = rest_field(visibility=["read", "create", "update", "delete", "query"], format="str")
@@ -66,6 +70,8 @@ class Uint8AsStringProperty(_Model):
 
     :ivar value: Required.
     :vartype value: int
+    :keyword value: Required.
+    :paramtype value: int
     """
 
     value: int = rest_field(visibility=["read", "create", "update", "delete", "query"], format="str")

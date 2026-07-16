@@ -26,6 +26,10 @@ class AbstractModel(_Model):
     :vartype kind: str
     :ivar name: Required.
     :vartype name: str
+    :keyword kind: Discriminator property for AbstractModel. Required. Default value is None.
+    :paramtype kind: str
+    :keyword name: Required.
+    :paramtype name: str
     """
 
     __mapping__: dict[str, _Model] = {}
@@ -58,6 +62,8 @@ class BaseModel(_Model):
 
     :ivar name: Required.
     :vartype name: str
+    :keyword name: Required.
+    :paramtype name: str
     """
 
     name: str = rest_field(visibility=["read", "create", "update", "delete", "query"])
@@ -86,6 +92,8 @@ class InnerModel(_Model):
 
     :ivar name: Required.
     :vartype name: str
+    :keyword name: Required.
+    :paramtype name: str
     """
 
     name: str = rest_field(visibility=["read", "create", "update", "delete", "query"])
@@ -114,6 +122,8 @@ class InternalDecoratorModelInInternal(_Model):
 
     :ivar name: Required.
     :vartype name: str
+    :keyword name: Required.
+    :paramtype name: str
     """
 
     name: str = rest_field(visibility=["read", "create", "update", "delete", "query"])
@@ -142,6 +152,8 @@ class NoDecoratorModelInInternal(_Model):
 
     :ivar name: Required.
     :vartype name: str
+    :keyword name: Required.
+    :paramtype name: str
     """
 
     name: str = rest_field(visibility=["read", "create", "update", "delete", "query"])
@@ -170,6 +182,8 @@ class NoDecoratorModelInPublic(_Model):
 
     :ivar name: Required.
     :vartype name: str
+    :keyword name: Required.
+    :paramtype name: str
     """
 
     name: str = rest_field(visibility=["read", "create", "update", "delete", "query"])
@@ -200,6 +214,10 @@ class OuterModel(BaseModel):
     :vartype name: str
     :ivar inner: Required.
     :vartype inner: ~specs.azure.clientgenerator.core.access.models._models.InnerModel
+    :keyword name: Required.
+    :paramtype name: str
+    :keyword inner: Required.
+    :paramtype inner: ~specs.azure.clientgenerator.core.access.models._models.InnerModel
     """
 
     inner: "_models._models.InnerModel" = rest_field(visibility=["read", "create", "update", "delete", "query"])
@@ -229,6 +247,8 @@ class PublicDecoratorModelInInternal(_Model):
 
     :ivar name: Required.
     :vartype name: str
+    :keyword name: Required.
+    :paramtype name: str
     """
 
     name: str = rest_field(visibility=["read", "create", "update", "delete", "query"])
@@ -257,6 +277,8 @@ class PublicDecoratorModelInPublic(_Model):
 
     :ivar name: Required.
     :vartype name: str
+    :keyword name: Required.
+    :paramtype name: str
     """
 
     name: str = rest_field(visibility=["read", "create", "update", "delete", "query"])
@@ -287,6 +309,8 @@ class RealModel(AbstractModel, discriminator="real"):
     :vartype name: str
     :ivar kind: Required. Default value is "real".
     :vartype kind: str
+    :keyword name: Required.
+    :paramtype name: str
     """
 
     kind: Literal["real"] = rest_discriminator(name="kind", visibility=["read", "create", "update", "delete", "query"])  # type: ignore
@@ -316,6 +340,8 @@ class SharedModel(_Model):
 
     :ivar name: Required.
     :vartype name: str
+    :keyword name: Required.
+    :paramtype name: str
     """
 
     name: str = rest_field(visibility=["read", "create", "update", "delete", "query"])

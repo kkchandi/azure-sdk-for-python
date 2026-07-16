@@ -16,6 +16,10 @@ class InnerModel(_Model):
     :vartype property: str
     :ivar children:
     :vartype children: dict[str, ~typetest.dictionary.models.InnerModel]
+    :keyword property: Required string property. Required.
+    :paramtype property: str
+    :keyword children:
+    :paramtype children: dict[str, ~typetest.dictionary.models.InnerModel]
     """
 
     property: str = rest_field(visibility=["read", "create", "update", "delete", "query"])

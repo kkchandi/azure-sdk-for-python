@@ -13,6 +13,8 @@ class AndModel(_Model):
 
     :ivar name: Required.
     :vartype name: str
+    :keyword name: Required.
+    :paramtype name: str
     """
 
     name: str = rest_field(visibility=["read", "create", "update", "delete", "query"])
@@ -41,6 +43,8 @@ class AsModel(_Model):
 
     :ivar name: Required.
     :vartype name: str
+    :keyword name: Required.
+    :paramtype name: str
     """
 
     name: str = rest_field(visibility=["read", "create", "update", "delete", "query"])
@@ -69,6 +73,8 @@ class AssertModel(_Model):
 
     :ivar name: Required.
     :vartype name: str
+    :keyword name: Required.
+    :paramtype name: str
     """
 
     name: str = rest_field(visibility=["read", "create", "update", "delete", "query"])
@@ -97,6 +103,8 @@ class AsyncModel(_Model):
 
     :ivar name: Required.
     :vartype name: str
+    :keyword name: Required.
+    :paramtype name: str
     """
 
     name: str = rest_field(visibility=["read", "create", "update", "delete", "query"])
@@ -125,6 +133,8 @@ class AwaitModel(_Model):
 
     :ivar name: Required.
     :vartype name: str
+    :keyword name: Required.
+    :paramtype name: str
     """
 
     name: str = rest_field(visibility=["read", "create", "update", "delete", "query"])
@@ -153,6 +163,8 @@ class BreakModel(_Model):
 
     :ivar name: Required.
     :vartype name: str
+    :keyword name: Required.
+    :paramtype name: str
     """
 
     name: str = rest_field(visibility=["read", "create", "update", "delete", "query"])
@@ -181,6 +193,8 @@ class ClassModel(_Model):
 
     :ivar name: Required.
     :vartype name: str
+    :keyword name: Required.
+    :paramtype name: str
     """
 
     name: str = rest_field(visibility=["read", "create", "update", "delete", "query"])
@@ -209,6 +223,8 @@ class Constructor(_Model):
 
     :ivar name: Required.
     :vartype name: str
+    :keyword name: Required.
+    :paramtype name: str
     """
 
     name: str = rest_field(visibility=["read", "create", "update", "delete", "query"])
@@ -237,6 +253,8 @@ class ContinueModel(_Model):
 
     :ivar name: Required.
     :vartype name: str
+    :keyword name: Required.
+    :paramtype name: str
     """
 
     name: str = rest_field(visibility=["read", "create", "update", "delete", "query"])
@@ -265,6 +283,8 @@ class DefModel(_Model):
 
     :ivar name: Required.
     :vartype name: str
+    :keyword name: Required.
+    :paramtype name: str
     """
 
     name: str = rest_field(visibility=["read", "create", "update", "delete", "query"])
@@ -293,6 +313,8 @@ class DelModel(_Model):
 
     :ivar name: Required.
     :vartype name: str
+    :keyword name: Required.
+    :paramtype name: str
     """
 
     name: str = rest_field(visibility=["read", "create", "update", "delete", "query"])
@@ -321,6 +343,8 @@ class ElifModel(_Model):
 
     :ivar name: Required.
     :vartype name: str
+    :keyword name: Required.
+    :paramtype name: str
     """
 
     name: str = rest_field(visibility=["read", "create", "update", "delete", "query"])
@@ -349,6 +373,8 @@ class ElseModel(_Model):
 
     :ivar name: Required.
     :vartype name: str
+    :keyword name: Required.
+    :paramtype name: str
     """
 
     name: str = rest_field(visibility=["read", "create", "update", "delete", "query"])
@@ -377,6 +403,8 @@ class ExceptModel(_Model):
 
     :ivar name: Required.
     :vartype name: str
+    :keyword name: Required.
+    :paramtype name: str
     """
 
     name: str = rest_field(visibility=["read", "create", "update", "delete", "query"])
@@ -405,6 +433,8 @@ class ExecModel(_Model):
 
     :ivar name: Required.
     :vartype name: str
+    :keyword name: Required.
+    :paramtype name: str
     """
 
     name: str = rest_field(visibility=["read", "create", "update", "delete", "query"])
@@ -433,6 +463,8 @@ class FinallyModel(_Model):
 
     :ivar name: Required.
     :vartype name: str
+    :keyword name: Required.
+    :paramtype name: str
     """
 
     name: str = rest_field(visibility=["read", "create", "update", "delete", "query"])
@@ -461,6 +493,8 @@ class ForModel(_Model):
 
     :ivar name: Required.
     :vartype name: str
+    :keyword name: Required.
+    :paramtype name: str
     """
 
     name: str = rest_field(visibility=["read", "create", "update", "delete", "query"])
@@ -489,6 +523,8 @@ class FromModel(_Model):
 
     :ivar name: Required.
     :vartype name: str
+    :keyword name: Required.
+    :paramtype name: str
     """
 
     name: str = rest_field(visibility=["read", "create", "update", "delete", "query"])
@@ -517,6 +553,8 @@ class GlobalModel(_Model):
 
     :ivar name: Required.
     :vartype name: str
+    :keyword name: Required.
+    :paramtype name: str
     """
 
     name: str = rest_field(visibility=["read", "create", "update", "delete", "query"])
@@ -545,6 +583,8 @@ class IfModel(_Model):
 
     :ivar name: Required.
     :vartype name: str
+    :keyword name: Required.
+    :paramtype name: str
     """
 
     name: str = rest_field(visibility=["read", "create", "update", "delete", "query"])
@@ -573,6 +613,8 @@ class ImportModel(_Model):
 
     :ivar name: Required.
     :vartype name: str
+    :keyword name: Required.
+    :paramtype name: str
     """
 
     name: str = rest_field(visibility=["read", "create", "update", "delete", "query"])
@@ -601,6 +643,8 @@ class InModel(_Model):
 
     :ivar name: Required.
     :vartype name: str
+    :keyword name: Required.
+    :paramtype name: str
     """
 
     name: str = rest_field(visibility=["read", "create", "update", "delete", "query"])
@@ -629,6 +673,8 @@ class IsModel(_Model):
 
     :ivar name: Required.
     :vartype name: str
+    :keyword name: Required.
+    :paramtype name: str
     """
 
     name: str = rest_field(visibility=["read", "create", "update", "delete", "query"])
@@ -657,6 +703,8 @@ class LambdaModel(_Model):
 
     :ivar name: Required.
     :vartype name: str
+    :keyword name: Required.
+    :paramtype name: str
     """
 
     name: str = rest_field(visibility=["read", "create", "update", "delete", "query"])
@@ -685,6 +733,8 @@ class NotModel(_Model):
 
     :ivar name: Required.
     :vartype name: str
+    :keyword name: Required.
+    :paramtype name: str
     """
 
     name: str = rest_field(visibility=["read", "create", "update", "delete", "query"])
@@ -713,6 +763,8 @@ class OrModel(_Model):
 
     :ivar name: Required.
     :vartype name: str
+    :keyword name: Required.
+    :paramtype name: str
     """
 
     name: str = rest_field(visibility=["read", "create", "update", "delete", "query"])
@@ -741,6 +793,8 @@ class PassModel(_Model):
 
     :ivar name: Required.
     :vartype name: str
+    :keyword name: Required.
+    :paramtype name: str
     """
 
     name: str = rest_field(visibility=["read", "create", "update", "delete", "query"])
@@ -769,6 +823,8 @@ class RaiseModel(_Model):
 
     :ivar name: Required.
     :vartype name: str
+    :keyword name: Required.
+    :paramtype name: str
     """
 
     name: str = rest_field(visibility=["read", "create", "update", "delete", "query"])
@@ -797,6 +853,8 @@ class ReturnModel(_Model):
 
     :ivar name: Required.
     :vartype name: str
+    :keyword name: Required.
+    :paramtype name: str
     """
 
     name: str = rest_field(visibility=["read", "create", "update", "delete", "query"])
@@ -825,6 +883,8 @@ class TryModel(_Model):
 
     :ivar name: Required.
     :vartype name: str
+    :keyword name: Required.
+    :paramtype name: str
     """
 
     name: str = rest_field(visibility=["read", "create", "update", "delete", "query"])
@@ -853,6 +913,8 @@ class WhileModel(_Model):
 
     :ivar name: Required.
     :vartype name: str
+    :keyword name: Required.
+    :paramtype name: str
     """
 
     name: str = rest_field(visibility=["read", "create", "update", "delete", "query"])
@@ -881,6 +943,8 @@ class WithModel(_Model):
 
     :ivar name: Required.
     :vartype name: str
+    :keyword name: Required.
+    :paramtype name: str
     """
 
     name: str = rest_field(visibility=["read", "create", "update", "delete", "query"])
@@ -909,6 +973,8 @@ class YieldModel(_Model):
 
     :ivar name: Required.
     :vartype name: str
+    :keyword name: Required.
+    :paramtype name: str
     """
 
     name: str = rest_field(visibility=["read", "create", "update", "delete", "query"])

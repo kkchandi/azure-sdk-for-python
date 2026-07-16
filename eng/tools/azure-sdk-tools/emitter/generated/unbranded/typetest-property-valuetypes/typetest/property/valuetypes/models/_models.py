@@ -12,7 +12,7 @@ if TYPE_CHECKING:
     from .. import models as _models
 
 
-class BooleanLiteralProperty(_Model):
+class BooleanLiteralProperty(_Model):  # pylint: disable=docstring-missing-param
     """Model with a boolean literal property.
 
     :ivar property: Property. Required. Default value is True.
@@ -32,6 +32,8 @@ class BooleanProperty(_Model):
 
     :ivar property: Property. Required.
     :vartype property: bool
+    :keyword property: Property. Required.
+    :paramtype property: bool
     """
 
     property: bool = rest_field(visibility=["read", "create", "update", "delete", "query"])
@@ -60,6 +62,8 @@ class BytesProperty(_Model):
 
     :ivar property: Property. Required.
     :vartype property: bytes
+    :keyword property: Property. Required.
+    :paramtype property: bytes
     """
 
     property: bytes = rest_field(visibility=["read", "create", "update", "delete", "query"], format="base64")
@@ -88,6 +92,8 @@ class CollectionsIntProperty(_Model):
 
     :ivar property: Property. Required.
     :vartype property: list[int]
+    :keyword property: Property. Required.
+    :paramtype property: list[int]
     """
 
     property: list[int] = rest_field(visibility=["read", "create", "update", "delete", "query"])
@@ -116,6 +122,8 @@ class CollectionsModelProperty(_Model):
 
     :ivar property: Property. Required.
     :vartype property: list[~typetest.property.valuetypes.models.InnerModel]
+    :keyword property: Property. Required.
+    :paramtype property: list[~typetest.property.valuetypes.models.InnerModel]
     """
 
     property: list["_models.InnerModel"] = rest_field(visibility=["read", "create", "update", "delete", "query"])
@@ -144,6 +152,8 @@ class CollectionsStringProperty(_Model):
 
     :ivar property: Property. Required.
     :vartype property: list[str]
+    :keyword property: Property. Required.
+    :paramtype property: list[str]
     """
 
     property: list[str] = rest_field(visibility=["read", "create", "update", "delete", "query"])
@@ -172,6 +182,8 @@ class DatetimeProperty(_Model):
 
     :ivar property: Property. Required.
     :vartype property: ~datetime.datetime
+    :keyword property: Property. Required.
+    :paramtype property: ~datetime.datetime
     """
 
     property: datetime.datetime = rest_field(
@@ -202,6 +214,8 @@ class Decimal128Property(_Model):
 
     :ivar property: Property. Required.
     :vartype property: ~decimal.Decimal
+    :keyword property: Property. Required.
+    :paramtype property: ~decimal.Decimal
     """
 
     property: decimal.Decimal = rest_field(visibility=["read", "create", "update", "delete", "query"])
@@ -230,6 +244,8 @@ class DecimalProperty(_Model):
 
     :ivar property: Property. Required.
     :vartype property: ~decimal.Decimal
+    :keyword property: Property. Required.
+    :paramtype property: ~decimal.Decimal
     """
 
     property: decimal.Decimal = rest_field(visibility=["read", "create", "update", "delete", "query"])
@@ -258,6 +274,8 @@ class DictionaryStringProperty(_Model):
 
     :ivar property: Property. Required.
     :vartype property: dict[str, str]
+    :keyword property: Property. Required.
+    :paramtype property: dict[str, str]
     """
 
     property: dict[str, str] = rest_field(visibility=["read", "create", "update", "delete", "query"])
@@ -286,6 +304,8 @@ class DurationProperty(_Model):
 
     :ivar property: Property. Required.
     :vartype property: ~datetime.timedelta
+    :keyword property: Property. Required.
+    :paramtype property: ~datetime.timedelta
     """
 
     property: datetime.timedelta = rest_field(visibility=["read", "create", "update", "delete", "query"])
@@ -314,6 +334,8 @@ class EnumProperty(_Model):
 
     :ivar property: Property. Required. Known values are: "ValueOne" and "ValueTwo".
     :vartype property: str or ~typetest.property.valuetypes.models.FixedInnerEnum
+    :keyword property: Property. Required. Known values are: "ValueOne" and "ValueTwo".
+    :paramtype property: str or ~typetest.property.valuetypes.models.FixedInnerEnum
     """
 
     property: Union[str, "_models.FixedInnerEnum"] = rest_field(
@@ -344,6 +366,8 @@ class ExtensibleEnumProperty(_Model):
 
     :ivar property: Property. Required. Known values are: "ValueOne" and "ValueTwo".
     :vartype property: str or ~typetest.property.valuetypes.models.InnerEnum
+    :keyword property: Property. Required. Known values are: "ValueOne" and "ValueTwo".
+    :paramtype property: str or ~typetest.property.valuetypes.models.InnerEnum
     """
 
     property: Union[str, "_models.InnerEnum"] = rest_field(visibility=["read", "create", "update", "delete", "query"])
@@ -367,7 +391,7 @@ class ExtensibleEnumProperty(_Model):
         super().__init__(*args, **kwargs)
 
 
-class FloatLiteralProperty(_Model):
+class FloatLiteralProperty(_Model):  # pylint: disable=docstring-missing-param
     """Model with a float literal property.
 
     :ivar property: Property. Required. Default value is 43.125.
@@ -387,6 +411,8 @@ class FloatProperty(_Model):
 
     :ivar property: Property. Required.
     :vartype property: float
+    :keyword property: Property. Required.
+    :paramtype property: float
     """
 
     property: float = rest_field(visibility=["read", "create", "update", "delete", "query"])
@@ -415,6 +441,8 @@ class InnerModel(_Model):
 
     :ivar property: Required string property. Required.
     :vartype property: str
+    :keyword property: Required string property. Required.
+    :paramtype property: str
     """
 
     property: str = rest_field(visibility=["read", "create", "update", "delete", "query"])
@@ -438,7 +466,7 @@ class InnerModel(_Model):
         super().__init__(*args, **kwargs)
 
 
-class IntLiteralProperty(_Model):
+class IntLiteralProperty(_Model):  # pylint: disable=docstring-missing-param
     """Model with a int literal property.
 
     :ivar property: Property. Required. Default value is 42.
@@ -458,6 +486,8 @@ class IntProperty(_Model):
 
     :ivar property: Property. Required.
     :vartype property: int
+    :keyword property: Property. Required.
+    :paramtype property: int
     """
 
     property: int = rest_field(visibility=["read", "create", "update", "delete", "query"])
@@ -486,6 +516,8 @@ class ModelProperty(_Model):
 
     :ivar property: Property. Required.
     :vartype property: ~typetest.property.valuetypes.models.InnerModel
+    :keyword property: Property. Required.
+    :paramtype property: ~typetest.property.valuetypes.models.InnerModel
     """
 
     property: "_models.InnerModel" = rest_field(visibility=["read", "create", "update", "delete", "query"])
@@ -513,7 +545,7 @@ class NeverProperty(_Model):
     """Model with a property never. (This property should not be included)."""
 
 
-class StringLiteralProperty(_Model):
+class StringLiteralProperty(_Model):  # pylint: disable=docstring-missing-param
     """Model with a string literal property.
 
     :ivar property: Property. Required. Default value is "hello".
@@ -533,6 +565,8 @@ class StringProperty(_Model):
 
     :ivar property: Property. Required.
     :vartype property: str
+    :keyword property: Property. Required.
+    :paramtype property: str
     """
 
     property: str = rest_field(visibility=["read", "create", "update", "delete", "query"])
@@ -562,6 +596,8 @@ class UnionEnumValueProperty(_Model):
 
     :ivar property: Property. Required. ENUM_VALUE2.
     :vartype property: str or ~typetest.property.valuetypes.models.ENUM_VALUE2
+    :keyword property: Property. Required. ENUM_VALUE2.
+    :paramtype property: str or ~typetest.property.valuetypes.models.ENUM_VALUE2
     """
 
     property: Literal[ExtendedEnum.ENUM_VALUE2] = rest_field(visibility=["read", "create", "update", "delete", "query"])
@@ -590,6 +626,8 @@ class UnionFloatLiteralProperty(_Model):
 
     :ivar property: Property. Required. Is one of the following types: float
     :vartype property: float or float
+    :keyword property: Property. Required. Is one of the following types: float
+    :paramtype property: float or float
     """
 
     property: float = rest_field(visibility=["read", "create", "update", "delete", "query"])
@@ -618,6 +656,8 @@ class UnionIntLiteralProperty(_Model):
 
     :ivar property: Property. Required. Is either a Literal[42] type or a Literal[43] type.
     :vartype property: int or int
+    :keyword property: Property. Required. Is either a Literal[42] type or a Literal[43] type.
+    :paramtype property: int or int
     """
 
     property: Literal[42, 43] = rest_field(visibility=["read", "create", "update", "delete", "query"])
@@ -647,6 +687,9 @@ class UnionStringLiteralProperty(_Model):
     :ivar property: Property. Required. Is either a Literal["hello"] type or a Literal["world"]
      type.
     :vartype property: str or str
+    :keyword property: Property. Required. Is either a Literal["hello"] type or a Literal["world"]
+     type.
+    :paramtype property: str or str
     """
 
     property: Literal["hello", "world"] = rest_field(visibility=["read", "create", "update", "delete", "query"])
@@ -675,6 +718,8 @@ class UnknownArrayProperty(_Model):
 
     :ivar property: Property. Required.
     :vartype property: any
+    :keyword property: Property. Required.
+    :paramtype property: any
     """
 
     property: Any = rest_field(visibility=["read", "create", "update", "delete", "query"])
@@ -703,6 +748,8 @@ class UnknownDictProperty(_Model):
 
     :ivar property: Property. Required.
     :vartype property: any
+    :keyword property: Property. Required.
+    :paramtype property: any
     """
 
     property: Any = rest_field(visibility=["read", "create", "update", "delete", "query"])
@@ -731,6 +778,8 @@ class UnknownIntProperty(_Model):
 
     :ivar property: Property. Required.
     :vartype property: any
+    :keyword property: Property. Required.
+    :paramtype property: any
     """
 
     property: Any = rest_field(visibility=["read", "create", "update", "delete", "query"])
@@ -759,6 +808,8 @@ class UnknownStringProperty(_Model):
 
     :ivar property: Property. Required.
     :vartype property: any
+    :keyword property: Property. Required.
+    :paramtype property: any
     """
 
     property: Any = rest_field(visibility=["read", "create", "update", "delete", "query"])

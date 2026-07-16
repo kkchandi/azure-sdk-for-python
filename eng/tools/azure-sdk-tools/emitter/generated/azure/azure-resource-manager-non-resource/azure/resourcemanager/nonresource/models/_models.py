@@ -64,6 +64,8 @@ class ErrorResponse(_Model):
 
     :ivar error: The error object.
     :vartype error: ~azure.resourcemanager.nonresource.models.ErrorDetail
+    :keyword error: The error object.
+    :paramtype error: ~azure.resourcemanager.nonresource.models.ErrorDetail
     """
 
     error: Optional["_models.ErrorDetail"] = rest_field(visibility=["read", "create", "update", "delete", "query"])
@@ -97,6 +99,12 @@ class NonResource(_Model):
     :vartype name: str
     :ivar type: A type.
     :vartype type: str
+    :keyword id: An id.
+    :paramtype id: str
+    :keyword name: A name.
+    :paramtype name: str
+    :keyword type: A type.
+    :paramtype type: str
     """
 
     id: Optional[str] = rest_field(visibility=["read", "create", "update", "delete", "query"])

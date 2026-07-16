@@ -17,6 +17,8 @@ class DurationModel(_Model):
 
     :ivar input: Required.
     :vartype input: str
+    :keyword input: Required.
+    :paramtype input: str
     """
 
     input: str = rest_field(visibility=["read", "create", "update", "delete", "query"])

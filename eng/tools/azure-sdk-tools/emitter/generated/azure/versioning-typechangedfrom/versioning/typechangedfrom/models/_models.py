@@ -19,6 +19,10 @@ class TestModel(_Model):
     :vartype prop: str
     :ivar changed_prop: Required.
     :vartype changed_prop: str
+    :keyword prop: Required.
+    :paramtype prop: str
+    :keyword changed_prop: Required.
+    :paramtype changed_prop: str
     """
 
     prop: str = rest_field(visibility=["read", "create", "update", "delete", "query"])

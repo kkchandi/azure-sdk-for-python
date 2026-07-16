@@ -11,6 +11,8 @@ class Pet(_Model):
 
     :ivar name: Required.
     :vartype name: str
+    :keyword name: Required.
+    :paramtype name: str
     """
 
     name: str = rest_field(visibility=["read", "create", "update", "delete", "query"])
@@ -41,6 +43,10 @@ class Cat(Pet):
     :vartype name: str
     :ivar age: Required.
     :vartype age: int
+    :keyword name: Required.
+    :paramtype name: str
+    :keyword age: Required.
+    :paramtype age: int
     """
 
     age: int = rest_field(visibility=["read", "create", "update", "delete", "query"])
@@ -74,6 +80,12 @@ class Siamese(Cat):
     :vartype age: int
     :ivar smart: Required.
     :vartype smart: bool
+    :keyword name: Required.
+    :paramtype name: str
+    :keyword age: Required.
+    :paramtype age: int
+    :keyword smart: Required.
+    :paramtype smart: bool
     """
 
     smart: bool = rest_field(visibility=["read", "create", "update", "delete", "query"])

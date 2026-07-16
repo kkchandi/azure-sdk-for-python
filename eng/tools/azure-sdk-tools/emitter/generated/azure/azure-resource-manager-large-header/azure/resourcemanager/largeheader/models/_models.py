@@ -20,6 +20,8 @@ class CancelResult(_Model):
 
     :ivar succeeded: Required.
     :vartype succeeded: bool
+    :keyword succeeded: Required.
+    :paramtype succeeded: bool
     """
 
     succeeded: bool = rest_field(visibility=["read", "create", "update", "delete", "query"])
@@ -92,6 +94,8 @@ class ErrorResponse(_Model):
 
     :ivar error: The error object.
     :vartype error: ~azure.resourcemanager.largeheader.models.ErrorDetail
+    :keyword error: The error object.
+    :paramtype error: ~azure.resourcemanager.largeheader.models.ErrorDetail
     """
 
     error: Optional["_models.ErrorDetail"] = rest_field(visibility=["read", "create", "update", "delete", "query"])

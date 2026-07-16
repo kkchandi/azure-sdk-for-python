@@ -24,6 +24,10 @@ class BytesProperty(_Model):
     :vartype required_property: str
     :ivar nullable_property: Property. Required.
     :vartype nullable_property: bytes
+    :keyword required_property: Required property. Required.
+    :paramtype required_property: str
+    :keyword nullable_property: Property. Required.
+    :paramtype nullable_property: bytes
     """
 
     required_property: str = rest_field(
@@ -61,6 +65,10 @@ class CollectionsByteProperty(_Model):
     :vartype required_property: str
     :ivar nullable_property: Property. Required.
     :vartype nullable_property: list[bytes]
+    :keyword required_property: Required property. Required.
+    :paramtype required_property: str
+    :keyword nullable_property: Property. Required.
+    :paramtype nullable_property: list[bytes]
     """
 
     required_property: str = rest_field(
@@ -98,6 +106,10 @@ class CollectionsModelProperty(_Model):
     :vartype required_property: str
     :ivar nullable_property: Property. Required.
     :vartype nullable_property: list[~typetest.property.nullable.models.InnerModel]
+    :keyword required_property: Required property. Required.
+    :paramtype required_property: str
+    :keyword nullable_property: Property. Required.
+    :paramtype nullable_property: list[~typetest.property.nullable.models.InnerModel]
     """
 
     required_property: str = rest_field(
@@ -135,6 +147,10 @@ class CollectionsStringProperty(_Model):
     :vartype required_property: str
     :ivar nullable_property: Property. Required.
     :vartype nullable_property: list[str]
+    :keyword required_property: Required property. Required.
+    :paramtype required_property: str
+    :keyword nullable_property: Property. Required.
+    :paramtype nullable_property: list[str]
     """
 
     required_property: str = rest_field(
@@ -172,6 +188,10 @@ class DatetimeProperty(_Model):
     :vartype required_property: str
     :ivar nullable_property: Property. Required.
     :vartype nullable_property: ~datetime.datetime
+    :keyword required_property: Required property. Required.
+    :paramtype required_property: str
+    :keyword nullable_property: Property. Required.
+    :paramtype nullable_property: ~datetime.datetime
     """
 
     required_property: str = rest_field(
@@ -209,6 +229,10 @@ class DurationProperty(_Model):
     :vartype required_property: str
     :ivar nullable_property: Property. Required.
     :vartype nullable_property: ~datetime.timedelta
+    :keyword required_property: Required property. Required.
+    :paramtype required_property: str
+    :keyword nullable_property: Property. Required.
+    :paramtype nullable_property: ~datetime.timedelta
     """
 
     required_property: str = rest_field(
@@ -244,6 +268,8 @@ class InnerModel(_Model):
 
     :ivar property: Inner model property. Required.
     :vartype property: str
+    :keyword property: Inner model property. Required.
+    :paramtype property: str
     """
 
     property: str = rest_field(visibility=["read", "create", "update", "delete", "query"])
@@ -275,6 +301,10 @@ class StringProperty(_Model):
     :vartype required_property: str
     :ivar nullable_property: Property. Required.
     :vartype nullable_property: str
+    :keyword required_property: Required property. Required.
+    :paramtype required_property: str
+    :keyword nullable_property: Property. Required.
+    :paramtype nullable_property: str
     """
 
     required_property: str = rest_field(

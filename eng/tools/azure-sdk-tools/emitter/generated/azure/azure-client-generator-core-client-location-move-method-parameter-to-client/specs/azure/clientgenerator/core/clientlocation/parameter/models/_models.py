@@ -23,6 +23,14 @@ class Blob(_Model):
     :vartype size: int
     :ivar path: Required.
     :vartype path: str
+    :keyword id: Required.
+    :paramtype id: str
+    :keyword name: Required.
+    :paramtype name: str
+    :keyword size: Required.
+    :paramtype size: int
+    :keyword path: Required.
+    :paramtype path: str
     """
 
     id: str = rest_field(visibility=["read", "create", "update", "delete", "query"])

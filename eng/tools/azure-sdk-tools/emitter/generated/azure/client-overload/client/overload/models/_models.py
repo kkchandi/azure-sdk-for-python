@@ -21,6 +21,12 @@ class Resource(_Model):
     :vartype name: str
     :ivar scope: Required.
     :vartype scope: str
+    :keyword id: Required.
+    :paramtype id: str
+    :keyword name: Required.
+    :paramtype name: str
+    :keyword scope: Required.
+    :paramtype scope: str
     """
 
     id: str = rest_field(visibility=["read", "create", "update", "delete", "query"])

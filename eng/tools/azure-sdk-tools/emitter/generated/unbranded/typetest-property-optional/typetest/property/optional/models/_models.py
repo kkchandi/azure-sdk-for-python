@@ -15,6 +15,8 @@ class BooleanLiteralProperty(_Model):
 
     :ivar property: Property. Default value is True.
     :vartype property: bool
+    :keyword property: Property. Default value is True.
+    :paramtype property: bool
     """
 
     property: Optional[Literal[True]] = rest_field(visibility=["read", "create", "update", "delete", "query"])
@@ -44,6 +46,8 @@ class BytesProperty(_Model):
 
     :ivar property: Property.
     :vartype property: bytes
+    :keyword property: Property.
+    :paramtype property: bytes
     """
 
     property: Optional[bytes] = rest_field(visibility=["read", "create", "update", "delete", "query"], format="base64")
@@ -72,6 +76,8 @@ class CollectionsByteProperty(_Model):
 
     :ivar property: Property.
     :vartype property: list[bytes]
+    :keyword property: Property.
+    :paramtype property: list[bytes]
     """
 
     property: Optional[list[bytes]] = rest_field(
@@ -102,6 +108,8 @@ class CollectionsModelProperty(_Model):
 
     :ivar property: Property.
     :vartype property: list[~typetest.property.optional.models.StringProperty]
+    :keyword property: Property.
+    :paramtype property: list[~typetest.property.optional.models.StringProperty]
     """
 
     property: Optional[list["_models.StringProperty"]] = rest_field(
@@ -132,6 +140,8 @@ class DatetimeProperty(_Model):
 
     :ivar property: Property.
     :vartype property: ~datetime.datetime
+    :keyword property: Property.
+    :paramtype property: ~datetime.datetime
     """
 
     property: Optional[datetime.datetime] = rest_field(
@@ -162,6 +172,8 @@ class DurationProperty(_Model):
 
     :ivar property: Property.
     :vartype property: ~datetime.timedelta
+    :keyword property: Property.
+    :paramtype property: ~datetime.timedelta
     """
 
     property: Optional[datetime.timedelta] = rest_field(visibility=["read", "create", "update", "delete", "query"])
@@ -190,6 +202,8 @@ class FloatLiteralProperty(_Model):
 
     :ivar property: Property. Default value is 1.25.
     :vartype property: float
+    :keyword property: Property. Default value is 1.25.
+    :paramtype property: float
     """
 
     property: Optional[float] = rest_field(visibility=["read", "create", "update", "delete", "query"])
@@ -218,6 +232,8 @@ class IntLiteralProperty(_Model):
 
     :ivar property: Property. Default value is 1.
     :vartype property: int
+    :keyword property: Property. Default value is 1.
+    :paramtype property: int
     """
 
     property: Optional[Literal[1]] = rest_field(visibility=["read", "create", "update", "delete", "query"])
@@ -246,6 +262,8 @@ class PlainDateProperty(_Model):
 
     :ivar property: Property.
     :vartype property: ~datetime.date
+    :keyword property: Property.
+    :paramtype property: ~datetime.date
     """
 
     property: Optional[datetime.date] = rest_field(visibility=["read", "create", "update", "delete", "query"])
@@ -274,6 +292,8 @@ class PlainTimeProperty(_Model):
 
     :ivar property: Property.
     :vartype property: ~datetime.time
+    :keyword property: Property.
+    :paramtype property: ~datetime.time
     """
 
     property: Optional[datetime.time] = rest_field(visibility=["read", "create", "update", "delete", "query"])
@@ -304,6 +324,10 @@ class RequiredAndOptionalProperty(_Model):
     :vartype optional_property: str
     :ivar required_property: required int property. Required.
     :vartype required_property: int
+    :keyword required_property: required int property. Required.
+    :paramtype required_property: int
+    :keyword optional_property: optional string property.
+    :paramtype optional_property: str
     """
 
     optional_property: Optional[str] = rest_field(
@@ -339,6 +363,8 @@ class StringLiteralProperty(_Model):
 
     :ivar property: Property. Default value is "hello".
     :vartype property: str
+    :keyword property: Property. Default value is "hello".
+    :paramtype property: str
     """
 
     property: Optional[Literal["hello"]] = rest_field(visibility=["read", "create", "update", "delete", "query"])
@@ -368,6 +394,8 @@ class StringProperty(_Model):
 
     :ivar property: Property.
     :vartype property: str
+    :keyword property: Property.
+    :paramtype property: str
     """
 
     property: Optional[str] = rest_field(visibility=["read", "create", "update", "delete", "query"])
@@ -396,6 +424,8 @@ class UnionFloatLiteralProperty(_Model):
 
     :ivar property: Property. Is one of the following types: float
     :vartype property: float or float
+    :keyword property: Property. Is one of the following types: float
+    :paramtype property: float or float
     """
 
     property: Optional[float] = rest_field(visibility=["read", "create", "update", "delete", "query"])
@@ -424,6 +454,8 @@ class UnionIntLiteralProperty(_Model):
 
     :ivar property: Property. Is either a Literal[1] type or a Literal[2] type.
     :vartype property: int or int
+    :keyword property: Property. Is either a Literal[1] type or a Literal[2] type.
+    :paramtype property: int or int
     """
 
     property: Optional[Literal[1, 2]] = rest_field(visibility=["read", "create", "update", "delete", "query"])
@@ -452,6 +484,8 @@ class UnionStringLiteralProperty(_Model):
 
     :ivar property: Property. Is either a Literal["hello"] type or a Literal["world"] type.
     :vartype property: str or str
+    :keyword property: Property. Is either a Literal["hello"] type or a Literal["world"] type.
+    :paramtype property: str or str
     """
 
     property: Optional[Literal["hello", "world"]] = rest_field(

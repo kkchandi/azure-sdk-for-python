@@ -67,6 +67,8 @@ class ErrorResponse(_Model):
 
     :ivar error: The error object.
     :vartype error: ~azure.resourcemanager.managementgroup.models.ErrorDetail
+    :keyword error: The error object.
+    :paramtype error: ~azure.resourcemanager.managementgroup.models.ErrorDetail
     """
 
     error: Optional["_models.ErrorDetail"] = rest_field(visibility=["read", "create", "update", "delete", "query"])
@@ -153,6 +155,9 @@ class ManagementGroupChildResource(ExtensionResource):
     :ivar properties: The resource-specific properties for this resource.
     :vartype properties:
      ~azure.resourcemanager.managementgroup.models.ManagementGroupChildResourceProperties
+    :keyword properties: The resource-specific properties for this resource.
+    :paramtype properties:
+     ~azure.resourcemanager.managementgroup.models.ManagementGroupChildResourceProperties
     """
 
     properties: Optional["_models.ManagementGroupChildResourceProperties"] = rest_field(
@@ -187,6 +192,8 @@ class ManagementGroupChildResourceProperties(_Model):
      "Failed", "Canceled", "Provisioning", "Updating", "Deleting", and "Accepted".
     :vartype provisioning_state: str or
      ~azure.resourcemanager.managementgroup.models.ProvisioningState
+    :keyword description: The description of the resource.
+    :paramtype description: str
     """
 
     description: Optional[str] = rest_field(visibility=["read", "create", "update", "delete", "query"])
@@ -233,6 +240,21 @@ class SystemData(_Model):
      ~azure.resourcemanager.managementgroup.models.CreatedByType
     :ivar last_modified_at: The timestamp of resource last modification (UTC).
     :vartype last_modified_at: ~datetime.datetime
+    :keyword created_by: The identity that created the resource.
+    :paramtype created_by: str
+    :keyword created_by_type: The type of identity that created the resource. Known values are:
+     "User", "Application", "ManagedIdentity", and "Key".
+    :paramtype created_by_type: str or ~azure.resourcemanager.managementgroup.models.CreatedByType
+    :keyword created_at: The timestamp of resource creation (UTC).
+    :paramtype created_at: ~datetime.datetime
+    :keyword last_modified_by: The identity that last modified the resource.
+    :paramtype last_modified_by: str
+    :keyword last_modified_by_type: The type of identity that last modified the resource. Known
+     values are: "User", "Application", "ManagedIdentity", and "Key".
+    :paramtype last_modified_by_type: str or
+     ~azure.resourcemanager.managementgroup.models.CreatedByType
+    :keyword last_modified_at: The timestamp of resource last modification (UTC).
+    :paramtype last_modified_at: ~datetime.datetime
     """
 
     created_by: Optional[str] = rest_field(name="createdBy", visibility=["read", "create", "update", "delete", "query"])

@@ -66,6 +66,8 @@ class ErrorResponse(_Model):
 
     :ivar error: The error object.
     :vartype error: ~azure.resourcemanager.resources.models.ErrorDetail
+    :keyword error: The error object.
+    :paramtype error: ~azure.resourcemanager.resources.models.ErrorDetail
     """
 
     error: Optional["_models.ErrorDetail"] = rest_field(visibility=["read", "create", "update", "delete", "query"])
@@ -151,6 +153,8 @@ class ExtensionsResource(ExtensionResource):
     :vartype system_data: ~azure.resourcemanager.resources.models.SystemData
     :ivar properties: The resource-specific properties for this resource.
     :vartype properties: ~azure.resourcemanager.resources.models.ExtensionsResourceProperties
+    :keyword properties: The resource-specific properties for this resource.
+    :paramtype properties: ~azure.resourcemanager.resources.models.ExtensionsResourceProperties
     """
 
     properties: Optional["_models.ExtensionsResourceProperties"] = rest_field(
@@ -184,6 +188,8 @@ class ExtensionsResourceProperties(_Model):
     :ivar provisioning_state: The status of the last operation. Known values are: "Succeeded",
      "Failed", "Canceled", "Provisioning", "Updating", "Deleting", and "Accepted".
     :vartype provisioning_state: str or ~azure.resourcemanager.resources.models.ProvisioningState
+    :keyword description: The description of the resource.
+    :paramtype description: str
     """
 
     description: Optional[str] = rest_field(visibility=["read", "create", "update", "delete", "query"])
@@ -246,6 +252,8 @@ class LocationResource(ProxyResource):
     :vartype system_data: ~azure.resourcemanager.resources.models.SystemData
     :ivar properties: The resource-specific properties for this resource.
     :vartype properties: ~azure.resourcemanager.resources.models.LocationResourceProperties
+    :keyword properties: The resource-specific properties for this resource.
+    :paramtype properties: ~azure.resourcemanager.resources.models.LocationResourceProperties
     """
 
     properties: Optional["_models.LocationResourceProperties"] = rest_field(
@@ -279,6 +287,8 @@ class LocationResourceProperties(_Model):
     :ivar provisioning_state: The status of the last operation. Known values are: "Succeeded",
      "Failed", "Canceled", "Provisioning", "Updating", "Deleting", and "Accepted".
     :vartype provisioning_state: str or ~azure.resourcemanager.resources.models.ProvisioningState
+    :keyword description: The description of the resource.
+    :paramtype description: str
     """
 
     description: Optional[str] = rest_field(visibility=["read", "create", "update", "delete", "query"])
@@ -323,6 +333,8 @@ class NestedProxyResource(ProxyResource):
     :vartype system_data: ~azure.resourcemanager.resources.models.SystemData
     :ivar properties: The resource-specific properties for this resource.
     :vartype properties: ~azure.resourcemanager.resources.models.NestedProxyResourceProperties
+    :keyword properties: The resource-specific properties for this resource.
+    :paramtype properties: ~azure.resourcemanager.resources.models.NestedProxyResourceProperties
     """
 
     properties: Optional["_models.NestedProxyResourceProperties"] = rest_field(
@@ -356,6 +368,8 @@ class NestedProxyResourceProperties(_Model):
     :vartype provisioning_state: str or ~azure.resourcemanager.resources.models.ProvisioningState
     :ivar description: Nested resource description.
     :vartype description: str
+    :keyword description: Nested resource description.
+    :paramtype description: str
     """
 
     provisioning_state: Optional[Union[str, "_models.ProvisioningState"]] = rest_field(
@@ -391,6 +405,10 @@ class NotificationDetails(_Model):
     :vartype message: str
     :ivar urgent: If true, the notification is urgent. Required.
     :vartype urgent: bool
+    :keyword message: The notification message. Required.
+    :paramtype message: str
+    :keyword urgent: If true, the notification is urgent. Required.
+    :paramtype urgent: bool
     """
 
     message: str = rest_field(visibility=["read", "create", "update", "delete", "query"])
@@ -435,6 +453,10 @@ class TrackedResource(Resource):
     :vartype tags: dict[str, str]
     :ivar location: The geo-location where the resource lives. Required.
     :vartype location: str
+    :keyword location: The geo-location where the resource lives. Required.
+    :paramtype location: str
+    :keyword tags: Resource tags.
+    :paramtype tags: dict[str, str]
     """
 
     tags: Optional[dict[str, str]] = rest_field(visibility=["read", "create", "update", "delete", "query"])
@@ -482,6 +504,13 @@ class SingletonTrackedResource(TrackedResource):
     :vartype location: str
     :ivar properties: The resource-specific properties for this resource.
     :vartype properties: ~azure.resourcemanager.resources.models.SingletonTrackedResourceProperties
+    :keyword location: The geo-location where the resource lives. Required.
+    :paramtype location: str
+    :keyword tags: Resource tags.
+    :paramtype tags: dict[str, str]
+    :keyword properties: The resource-specific properties for this resource.
+    :paramtype properties:
+     ~azure.resourcemanager.resources.models.SingletonTrackedResourceProperties
     """
 
     properties: Optional["_models.SingletonTrackedResourceProperties"] = rest_field(
@@ -517,6 +546,8 @@ class SingletonTrackedResourceProperties(_Model):
     :vartype provisioning_state: str or ~azure.resourcemanager.resources.models.ProvisioningState
     :ivar description: The description of the resource.
     :vartype description: str
+    :keyword description: The description of the resource.
+    :paramtype description: str
     """
 
     provisioning_state: Optional[Union[str, "_models.ProvisioningState"]] = rest_field(
@@ -562,6 +593,20 @@ class SystemData(_Model):
     :vartype last_modified_by_type: str or ~azure.resourcemanager.resources.models.CreatedByType
     :ivar last_modified_at: The timestamp of resource last modification (UTC).
     :vartype last_modified_at: ~datetime.datetime
+    :keyword created_by: The identity that created the resource.
+    :paramtype created_by: str
+    :keyword created_by_type: The type of identity that created the resource. Known values are:
+     "User", "Application", "ManagedIdentity", and "Key".
+    :paramtype created_by_type: str or ~azure.resourcemanager.resources.models.CreatedByType
+    :keyword created_at: The timestamp of resource creation (UTC).
+    :paramtype created_at: ~datetime.datetime
+    :keyword last_modified_by: The identity that last modified the resource.
+    :paramtype last_modified_by: str
+    :keyword last_modified_by_type: The type of identity that last modified the resource. Known
+     values are: "User", "Application", "ManagedIdentity", and "Key".
+    :paramtype last_modified_by_type: str or ~azure.resourcemanager.resources.models.CreatedByType
+    :keyword last_modified_at: The timestamp of resource last modification (UTC).
+    :paramtype last_modified_at: ~datetime.datetime
     """
 
     created_by: Optional[str] = rest_field(name="createdBy", visibility=["read", "create", "update", "delete", "query"])
@@ -633,6 +678,13 @@ class TopLevelTrackedResource(TrackedResource):
     :vartype location: str
     :ivar properties: The resource-specific properties for this resource.
     :vartype properties: ~azure.resourcemanager.resources.models.TopLevelTrackedResourceProperties
+    :keyword location: The geo-location where the resource lives. Required.
+    :paramtype location: str
+    :keyword tags: Resource tags.
+    :paramtype tags: dict[str, str]
+    :keyword properties: The resource-specific properties for this resource.
+    :paramtype properties:
+     ~azure.resourcemanager.resources.models.TopLevelTrackedResourceProperties
     """
 
     properties: Optional["_models.TopLevelTrackedResourceProperties"] = rest_field(
@@ -668,6 +720,8 @@ class TopLevelTrackedResourceProperties(_Model):
     :vartype provisioning_state: str or ~azure.resourcemanager.resources.models.ProvisioningState
     :ivar description: The description of the resource.
     :vartype description: str
+    :keyword description: The description of the resource.
+    :paramtype description: str
     """
 
     provisioning_state: Optional[Union[str, "_models.ProvisioningState"]] = rest_field(

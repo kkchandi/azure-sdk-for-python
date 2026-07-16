@@ -17,6 +17,8 @@ class GenerationOptions(_Model):
 
     :ivar prompt: Prompt. Required.
     :vartype prompt: str
+    :keyword prompt: Prompt. Required.
+    :paramtype prompt: str
     """
 
     prompt: str = rest_field(visibility=["read", "create", "update", "delete", "query"])
@@ -45,6 +47,8 @@ class GenerationResult(_Model):
 
     :ivar data: The data. Required.
     :vartype data: str
+    :keyword data: The data. Required.
+    :paramtype data: str
     """
 
     data: str = rest_field(visibility=["read", "create", "update", "delete", "query"])

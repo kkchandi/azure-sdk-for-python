@@ -19,6 +19,8 @@ class User(_Model):
     :vartype id: int
     :ivar name: The user's name.
     :vartype name: str
+    :keyword name: The user's name.
+    :paramtype name: str
     """
 
     id: int = rest_field(visibility=["read"])
@@ -49,6 +51,8 @@ class UserActionParam(_Model):
 
     :ivar user_action_value: User action value. Required.
     :vartype user_action_value: str
+    :keyword user_action_value: User action value. Required.
+    :paramtype user_action_value: str
     """
 
     user_action_value: str = rest_field(
@@ -79,6 +83,8 @@ class UserActionResponse(_Model):
 
     :ivar user_action_result: User action result. Required.
     :vartype user_action_result: str
+    :keyword user_action_result: User action result. Required.
+    :paramtype user_action_result: str
     """
 
     user_action_result: str = rest_field(

@@ -24,6 +24,12 @@ class ModelV1(_Model):
     :vartype enum_prop: str or ~generation.subdir2.models.EnumV1
     :ivar union_prop: Required. Is either a str type or a int type.
     :vartype union_prop: str or int
+    :keyword prop: Required.
+    :paramtype prop: str
+    :keyword enum_prop: Required. Known values are: "enumMemberV1" and "enumMemberV2".
+    :paramtype enum_prop: str or ~generation.subdir2.models.EnumV1
+    :keyword union_prop: Required. Is either a str type or a int type.
+    :paramtype union_prop: str or int
     """
 
     prop: str = rest_field(visibility=["read", "create", "update", "delete", "query"])
@@ -66,6 +72,12 @@ class ModelV2(_Model):
     :vartype enum_prop: str or ~generation.subdir2.models.EnumV2
     :ivar union_prop: Required. Is either a str type or a int type.
     :vartype union_prop: str or int
+    :keyword prop: Required.
+    :paramtype prop: str
+    :keyword enum_prop: Required. "enumMember"
+    :paramtype enum_prop: str or ~generation.subdir2.models.EnumV2
+    :keyword union_prop: Required. Is either a str type or a int type.
+    :paramtype union_prop: str or int
     """
 
     prop: str = rest_field(visibility=["read", "create", "update", "delete", "query"])

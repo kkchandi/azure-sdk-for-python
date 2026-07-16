@@ -19,6 +19,10 @@ class Plant(_Model):
     :vartype name: str
     :ivar species: The species of the plant. Required.
     :vartype species: str
+    :keyword name: The name of the plant. Required.
+    :paramtype name: str
+    :keyword species: The species of the plant. Required.
+    :paramtype species: str
     """
 
     name: str = rest_field(visibility=["read", "create", "update", "delete", "query"])

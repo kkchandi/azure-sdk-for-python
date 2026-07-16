@@ -24,6 +24,12 @@ class NewModel(_Model):
     :vartype enum_prop: str or ~versioning.renamedfrom.models.NewEnum
     :ivar union_prop: Required. Is either a str type or a int type.
     :vartype union_prop: str or int
+    :keyword new_prop: Required.
+    :paramtype new_prop: str
+    :keyword enum_prop: Required. "newEnumMember"
+    :paramtype enum_prop: str or ~versioning.renamedfrom.models.NewEnum
+    :keyword union_prop: Required. Is either a str type or a int type.
+    :paramtype union_prop: str or int
     """
 
     new_prop: str = rest_field(name="newProp", visibility=["read", "create", "update", "delete", "query"])

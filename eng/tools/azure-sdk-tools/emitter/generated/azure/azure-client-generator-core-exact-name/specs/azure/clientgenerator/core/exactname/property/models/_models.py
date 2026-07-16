@@ -17,6 +17,8 @@ class ScopedModel(_Model):
 
     :ivar _my_name: Required.
     :vartype _my_name: str
+    :keyword _my_name: Required.
+    :paramtype _my_name: str
     """
 
     _my_name: str = rest_field(name="name", visibility=["read", "create", "update", "delete", "query"])

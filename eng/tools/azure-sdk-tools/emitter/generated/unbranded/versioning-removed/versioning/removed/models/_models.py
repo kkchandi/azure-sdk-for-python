@@ -18,6 +18,12 @@ class ModelV2(_Model):
     :vartype enum_prop: str or ~versioning.removed.models.EnumV2
     :ivar union_prop: Required. Is either a str type or a float type.
     :vartype union_prop: str or float
+    :keyword prop: Required.
+    :paramtype prop: str
+    :keyword enum_prop: Required. "enumMemberV2"
+    :paramtype enum_prop: str or ~versioning.removed.models.EnumV2
+    :keyword union_prop: Required. Is either a str type or a float type.
+    :paramtype union_prop: str or float
     """
 
     prop: str = rest_field(visibility=["read", "create", "update", "delete", "query"])
@@ -58,6 +64,10 @@ class ModelV3(_Model):
     :vartype id: str
     :ivar enum_prop: Required. Known values are: "enumMemberV1" and "enumMemberV2Preview".
     :vartype enum_prop: str or ~versioning.removed.models.EnumV3
+    :keyword id: Required.
+    :paramtype id: str
+    :keyword enum_prop: Required. Known values are: "enumMemberV1" and "enumMemberV2Preview".
+    :paramtype enum_prop: str or ~versioning.removed.models.EnumV3
     """
 
     id: str = rest_field(visibility=["read", "create", "update", "delete", "query"])

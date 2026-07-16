@@ -16,6 +16,8 @@ class DifferentSpreadFloatRecord(_Model):
 
     :ivar name: The id property. Required.
     :vartype name: str
+    :keyword name: The id property. Required.
+    :paramtype name: str
     """
 
     name: str = rest_field(visibility=["read", "create", "update", "delete", "query"])
@@ -47,6 +49,10 @@ class DifferentSpreadFloatDerived(DifferentSpreadFloatRecord):
     :vartype name: str
     :ivar derived_prop: The index property. Required.
     :vartype derived_prop: float
+    :keyword name: The id property. Required.
+    :paramtype name: str
+    :keyword derived_prop: The index property. Required.
+    :paramtype derived_prop: float
     """
 
     derived_prop: float = rest_field(name="derivedProp", visibility=["read", "create", "update", "delete", "query"])
@@ -76,6 +82,8 @@ class DifferentSpreadModelArrayRecord(_Model):
 
     :ivar known_prop: Required.
     :vartype known_prop: str
+    :keyword known_prop: Required.
+    :paramtype known_prop: str
     """
 
     known_prop: str = rest_field(name="knownProp", visibility=["read", "create", "update", "delete", "query"])
@@ -107,6 +115,10 @@ class DifferentSpreadModelArrayDerived(DifferentSpreadModelArrayRecord):
     :vartype known_prop: str
     :ivar derived_prop: The index property. Required.
     :vartype derived_prop: list[~typetest.property.additionalproperties.models.ModelForRecord]
+    :keyword known_prop: Required.
+    :paramtype known_prop: str
+    :keyword derived_prop: The index property. Required.
+    :paramtype derived_prop: list[~typetest.property.additionalproperties.models.ModelForRecord]
     """
 
     derived_prop: list["_models.ModelForRecord"] = rest_field(
@@ -138,6 +150,8 @@ class DifferentSpreadModelRecord(_Model):
 
     :ivar known_prop: Required.
     :vartype known_prop: str
+    :keyword known_prop: Required.
+    :paramtype known_prop: str
     """
 
     known_prop: str = rest_field(name="knownProp", visibility=["read", "create", "update", "delete", "query"])
@@ -169,6 +183,10 @@ class DifferentSpreadModelDerived(DifferentSpreadModelRecord):
     :vartype known_prop: str
     :ivar derived_prop: The index property. Required.
     :vartype derived_prop: ~typetest.property.additionalproperties.models.ModelForRecord
+    :keyword known_prop: Required.
+    :paramtype known_prop: str
+    :keyword derived_prop: The index property. Required.
+    :paramtype derived_prop: ~typetest.property.additionalproperties.models.ModelForRecord
     """
 
     derived_prop: "_models.ModelForRecord" = rest_field(
@@ -200,6 +218,8 @@ class DifferentSpreadStringRecord(_Model):
 
     :ivar id: The name property. Required.
     :vartype id: float
+    :keyword id: The name property. Required.
+    :paramtype id: float
     """
 
     id: float = rest_field(visibility=["read", "create", "update", "delete", "query"])
@@ -231,6 +251,10 @@ class DifferentSpreadStringDerived(DifferentSpreadStringRecord):
     :vartype id: float
     :ivar derived_prop: The index property. Required.
     :vartype derived_prop: str
+    :keyword id: The name property. Required.
+    :paramtype id: float
+    :keyword derived_prop: The index property. Required.
+    :paramtype derived_prop: str
     """
 
     derived_prop: str = rest_field(name="derivedProp", visibility=["read", "create", "update", "delete", "query"])
@@ -260,6 +284,8 @@ class ExtendsFloatAdditionalProperties(_Model):
 
     :ivar id: The id property. Required.
     :vartype id: float
+    :keyword id: The id property. Required.
+    :paramtype id: float
     """
 
     id: float = rest_field(visibility=["read", "create", "update", "delete", "query"])
@@ -288,6 +314,8 @@ class ExtendsModelAdditionalProperties(_Model):
 
     :ivar known_prop: Required.
     :vartype known_prop: ~typetest.property.additionalproperties.models.ModelForRecord
+    :keyword known_prop: Required.
+    :paramtype known_prop: ~typetest.property.additionalproperties.models.ModelForRecord
     """
 
     known_prop: "_models.ModelForRecord" = rest_field(
@@ -318,6 +346,8 @@ class ExtendsModelArrayAdditionalProperties(_Model):
 
     :ivar known_prop: Required.
     :vartype known_prop: list[~typetest.property.additionalproperties.models.ModelForRecord]
+    :keyword known_prop: Required.
+    :paramtype known_prop: list[~typetest.property.additionalproperties.models.ModelForRecord]
     """
 
     known_prop: list["_models.ModelForRecord"] = rest_field(
@@ -348,6 +378,8 @@ class ExtendsStringAdditionalProperties(_Model):
 
     :ivar name: The name property. Required.
     :vartype name: str
+    :keyword name: The name property. Required.
+    :paramtype name: str
     """
 
     name: str = rest_field(visibility=["read", "create", "update", "delete", "query"])
@@ -376,6 +408,8 @@ class ExtendsUnknownAdditionalProperties(_Model):
 
     :ivar name: The name property. Required.
     :vartype name: str
+    :keyword name: The name property. Required.
+    :paramtype name: str
     """
 
     name: str = rest_field(visibility=["read", "create", "update", "delete", "query"])
@@ -408,6 +442,12 @@ class ExtendsUnknownAdditionalPropertiesDerived(ExtendsUnknownAdditionalProperti
     :vartype index: int
     :ivar age: The age property.
     :vartype age: float
+    :keyword name: The name property. Required.
+    :paramtype name: str
+    :keyword index: The index property. Required.
+    :paramtype index: int
+    :keyword age: The age property.
+    :paramtype age: float
     """
 
     index: int = rest_field(visibility=["read", "create", "update", "delete", "query"])
@@ -445,6 +485,10 @@ class ExtendsUnknownAdditionalPropertiesDiscriminated(_Model):  # pylint: disabl
     :vartype name: str
     :ivar kind: The discriminator. Required. Default value is None.
     :vartype kind: str
+    :keyword name: The name property. Required.
+    :paramtype name: str
+    :keyword kind: The discriminator. Required. Default value is None.
+    :paramtype kind: str
     """
 
     __mapping__: dict[str, _Model] = {}
@@ -485,6 +529,12 @@ class ExtendsUnknownAdditionalPropertiesDiscriminatedDerived(
     :vartype index: int
     :ivar age: The age property.
     :vartype age: float
+    :keyword name: The name property. Required.
+    :paramtype name: str
+    :keyword index: The index property. Required.
+    :paramtype index: int
+    :keyword age: The age property.
+    :paramtype age: float
     """
 
     kind: Literal["derived"] = rest_discriminator(name="kind", visibility=["read", "create", "update", "delete", "query"])  # type: ignore
@@ -520,6 +570,8 @@ class IsFloatAdditionalProperties(_Model):
 
     :ivar id: The id property. Required.
     :vartype id: float
+    :keyword id: The id property. Required.
+    :paramtype id: float
     """
 
     id: float = rest_field(visibility=["read", "create", "update", "delete", "query"])
@@ -548,6 +600,8 @@ class IsModelAdditionalProperties(_Model):
 
     :ivar known_prop: Required.
     :vartype known_prop: ~typetest.property.additionalproperties.models.ModelForRecord
+    :keyword known_prop: Required.
+    :paramtype known_prop: ~typetest.property.additionalproperties.models.ModelForRecord
     """
 
     known_prop: "_models.ModelForRecord" = rest_field(
@@ -578,6 +632,8 @@ class IsModelArrayAdditionalProperties(_Model):
 
     :ivar known_prop: Required.
     :vartype known_prop: list[~typetest.property.additionalproperties.models.ModelForRecord]
+    :keyword known_prop: Required.
+    :paramtype known_prop: list[~typetest.property.additionalproperties.models.ModelForRecord]
     """
 
     known_prop: list["_models.ModelForRecord"] = rest_field(
@@ -608,6 +664,8 @@ class IsStringAdditionalProperties(_Model):
 
     :ivar name: The name property. Required.
     :vartype name: str
+    :keyword name: The name property. Required.
+    :paramtype name: str
     """
 
     name: str = rest_field(visibility=["read", "create", "update", "delete", "query"])
@@ -636,6 +694,8 @@ class IsUnknownAdditionalProperties(_Model):
 
     :ivar name: The name property. Required.
     :vartype name: str
+    :keyword name: The name property. Required.
+    :paramtype name: str
     """
 
     name: str = rest_field(visibility=["read", "create", "update", "delete", "query"])
@@ -668,6 +728,12 @@ class IsUnknownAdditionalPropertiesDerived(IsUnknownAdditionalProperties):
     :vartype index: int
     :ivar age: The age property.
     :vartype age: float
+    :keyword name: The name property. Required.
+    :paramtype name: str
+    :keyword index: The index property. Required.
+    :paramtype index: int
+    :keyword age: The age property.
+    :paramtype age: float
     """
 
     index: int = rest_field(visibility=["read", "create", "update", "delete", "query"])
@@ -705,6 +771,10 @@ class IsUnknownAdditionalPropertiesDiscriminated(_Model):  # pylint: disable=nam
     :vartype name: str
     :ivar kind: The discriminator. Required. Default value is None.
     :vartype kind: str
+    :keyword name: The name property. Required.
+    :paramtype name: str
+    :keyword kind: The discriminator. Required. Default value is None.
+    :paramtype kind: str
     """
 
     __mapping__: dict[str, _Model] = {}
@@ -745,6 +815,12 @@ class IsUnknownAdditionalPropertiesDiscriminatedDerived(
     :vartype index: int
     :ivar age: The age property.
     :vartype age: float
+    :keyword name: The name property. Required.
+    :paramtype name: str
+    :keyword index: The index property. Required.
+    :paramtype index: int
+    :keyword age: The age property.
+    :paramtype age: float
     """
 
     kind: Literal["derived"] = rest_discriminator(name="kind", visibility=["read", "create", "update", "delete", "query"])  # type: ignore
@@ -780,6 +856,8 @@ class ModelForRecord(_Model):
 
     :ivar state: The state property. Required.
     :vartype state: str
+    :keyword state: The state property. Required.
+    :paramtype state: str
     """
 
     state: str = rest_field(visibility=["read", "create", "update", "delete", "query"])
@@ -808,6 +886,8 @@ class MultipleSpreadRecord(_Model):
 
     :ivar flag: The name property. Required.
     :vartype flag: bool
+    :keyword flag: The name property. Required.
+    :paramtype flag: bool
     """
 
     flag: bool = rest_field(visibility=["read", "create", "update", "delete", "query"])
@@ -836,6 +916,8 @@ class SpreadFloatRecord(_Model):
 
     :ivar id: The id property. Required.
     :vartype id: float
+    :keyword id: The id property. Required.
+    :paramtype id: float
     """
 
     id: float = rest_field(visibility=["read", "create", "update", "delete", "query"])
@@ -864,6 +946,8 @@ class SpreadModelArrayRecord(_Model):
 
     :ivar known_prop: Required.
     :vartype known_prop: list[~typetest.property.additionalproperties.models.ModelForRecord]
+    :keyword known_prop: Required.
+    :paramtype known_prop: list[~typetest.property.additionalproperties.models.ModelForRecord]
     """
 
     known_prop: list["_models.ModelForRecord"] = rest_field(
@@ -894,6 +978,8 @@ class SpreadModelRecord(_Model):
 
     :ivar known_prop: Required.
     :vartype known_prop: ~typetest.property.additionalproperties.models.ModelForRecord
+    :keyword known_prop: Required.
+    :paramtype known_prop: ~typetest.property.additionalproperties.models.ModelForRecord
     """
 
     known_prop: "_models.ModelForRecord" = rest_field(
@@ -924,6 +1010,8 @@ class SpreadRecordForNonDiscriminatedUnion(_Model):
 
     :ivar name: The name property. Required.
     :vartype name: str
+    :keyword name: The name property. Required.
+    :paramtype name: str
     """
 
     name: str = rest_field(visibility=["read", "create", "update", "delete", "query"])
@@ -952,6 +1040,8 @@ class SpreadRecordForNonDiscriminatedUnion2(_Model):
 
     :ivar name: The name property. Required.
     :vartype name: str
+    :keyword name: The name property. Required.
+    :paramtype name: str
     """
 
     name: str = rest_field(visibility=["read", "create", "update", "delete", "query"])
@@ -980,6 +1070,8 @@ class SpreadRecordForNonDiscriminatedUnion3(_Model):
 
     :ivar name: The name property. Required.
     :vartype name: str
+    :keyword name: The name property. Required.
+    :paramtype name: str
     """
 
     name: str = rest_field(visibility=["read", "create", "update", "delete", "query"])
@@ -1008,6 +1100,8 @@ class SpreadRecordForUnion(_Model):
 
     :ivar flag: The name property. Required.
     :vartype flag: bool
+    :keyword flag: The name property. Required.
+    :paramtype flag: bool
     """
 
     flag: bool = rest_field(visibility=["read", "create", "update", "delete", "query"])
@@ -1036,6 +1130,8 @@ class SpreadStringRecord(_Model):
 
     :ivar name: The name property. Required.
     :vartype name: str
+    :keyword name: The name property. Required.
+    :paramtype name: str
     """
 
     name: str = rest_field(visibility=["read", "create", "update", "delete", "query"])
@@ -1066,6 +1162,8 @@ class WidgetData0(_Model):
     :vartype kind: str
     :ivar foo_prop: Required.
     :vartype foo_prop: str
+    :keyword foo_prop: Required.
+    :paramtype foo_prop: str
     """
 
     kind: Literal["kind0"] = rest_field(visibility=["read", "create", "update", "delete", "query"])
@@ -1101,6 +1199,10 @@ class WidgetData1(_Model):
     :vartype start: ~datetime.datetime
     :ivar end:
     :vartype end: ~datetime.datetime
+    :keyword start: Required.
+    :paramtype start: ~datetime.datetime
+    :keyword end:
+    :paramtype end: ~datetime.datetime
     """
 
     kind: Literal["kind1"] = rest_field(visibility=["read", "create", "update", "delete", "query"])
@@ -1138,6 +1240,8 @@ class WidgetData2(_Model):
     :vartype kind: str
     :ivar start: Required.
     :vartype start: str
+    :keyword start: Required.
+    :paramtype start: str
     """
 
     kind: Literal["kind1"] = rest_field(visibility=["read", "create", "update", "delete", "query"])

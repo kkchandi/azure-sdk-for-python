@@ -21,6 +21,9 @@ class EndpointConfig(_Model):
     :ivar protocol: Required. Known values are: "activity", "responses", "a2a", and "mcp".
     :vartype protocol: str or
      ~specs.azure.clientgenerator.core.exactname.enumvalue.models.AgentEndpointProtocol
+    :keyword protocol: Required. Known values are: "activity", "responses", "a2a", and "mcp".
+    :paramtype protocol: str or
+     ~specs.azure.clientgenerator.core.exactname.enumvalue.models.AgentEndpointProtocol
     """
 
     protocol: Union[str, "_models.AgentEndpointProtocol"] = rest_field(

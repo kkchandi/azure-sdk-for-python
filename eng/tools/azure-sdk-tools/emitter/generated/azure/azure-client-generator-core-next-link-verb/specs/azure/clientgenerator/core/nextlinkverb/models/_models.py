@@ -17,6 +17,8 @@ class Test(_Model):
 
     :ivar id: The id of the test. Required.
     :vartype id: str
+    :keyword id: The id of the test. Required.
+    :paramtype id: str
     """
 
     id: str = rest_field(visibility=["read", "create", "update", "delete", "query"])

@@ -32,6 +32,12 @@ class VisibilityModel(_Model):
     :vartype update_prop: list[int]
     :ivar delete_prop: Required bool, illustrating a delete property. Required.
     :vartype delete_prop: bool
+    :keyword create_prop: Required string[], illustrating a create property. Required.
+    :paramtype create_prop: list[str]
+    :keyword update_prop: Required int32[], illustrating a update property. Required.
+    :paramtype update_prop: list[int]
+    :keyword delete_prop: Required bool, illustrating a delete property. Required.
+    :paramtype delete_prop: bool
     """
 
     read_prop: str = rest_field(name="readProp", visibility=["read"])

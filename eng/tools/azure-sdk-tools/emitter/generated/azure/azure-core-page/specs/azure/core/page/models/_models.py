@@ -31,6 +31,8 @@ class ListItemInputBody(_Model):
 
     :ivar input_name: The name of the input. Required.
     :vartype input_name: str
+    :keyword input_name: The name of the input. Required.
+    :paramtype input_name: str
     """
 
     input_name: str = rest_field(name="inputName", visibility=["read", "create", "update", "delete", "query"])
@@ -76,6 +78,10 @@ class User(_Model):
     :vartype orders: list[~specs.azure.core.page.models.UserOrder]
     :ivar etag: The entity tag for this resource. Required.
     :vartype etag: str
+    :keyword name: The user's name. Required.
+    :paramtype name: str
+    :keyword orders: The user's order list.
+    :paramtype orders: list[~specs.azure.core.page.models.UserOrder]
     """
 
     id: int = rest_field(visibility=["read"])
@@ -115,6 +121,10 @@ class UserOrder(_Model):
     :vartype user_id: int
     :ivar detail: The user's order detail. Required.
     :vartype detail: str
+    :keyword user_id: The user's id. Required.
+    :paramtype user_id: int
+    :keyword detail: The user's order detail. Required.
+    :paramtype detail: str
     """
 
     id: int = rest_field(visibility=["read"])

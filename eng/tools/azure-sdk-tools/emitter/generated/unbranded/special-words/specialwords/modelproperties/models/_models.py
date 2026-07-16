@@ -31,6 +31,26 @@ class DictMethods(_Model):
     :vartype get_property: str
     :ivar copy_property: Required.
     :vartype copy_property: str
+    :keyword keys_property: Required.
+    :paramtype keys_property: str
+    :keyword items_property: Required.
+    :paramtype items_property: str
+    :keyword values_property: Required.
+    :paramtype values_property: str
+    :keyword popitem_property: Required.
+    :paramtype popitem_property: str
+    :keyword clear_property: Required.
+    :paramtype clear_property: str
+    :keyword update_property: Required.
+    :paramtype update_property: str
+    :keyword setdefault_property: Required.
+    :paramtype setdefault_property: str
+    :keyword pop_property: Required.
+    :paramtype pop_property: str
+    :keyword get_property: Required.
+    :paramtype get_property: str
+    :keyword copy_property: Required.
+    :paramtype copy_property: str
     """
 
     keys_property: str = rest_field(
@@ -106,6 +126,8 @@ class ModelWithList(_Model):
 
     :ivar list: Required.
     :vartype list: str
+    :keyword list: Required.
+    :paramtype list: str
     """
 
     list: str = rest_field(visibility=["read", "create", "update", "delete", "query"])
@@ -134,6 +156,8 @@ class SameAsModel(_Model):
 
     :ivar same_as_model: Required.
     :vartype same_as_model: str
+    :keyword same_as_model: Required.
+    :paramtype same_as_model: str
     """
 
     same_as_model: str = rest_field(name="SameAsModel", visibility=["read", "create", "update", "delete", "query"])

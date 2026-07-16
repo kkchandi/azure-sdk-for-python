@@ -19,6 +19,10 @@ class Pet(_Model):
     :vartype id: str
     :ivar name: Required.
     :vartype name: str
+    :keyword id: Required.
+    :paramtype id: str
+    :keyword name: Required.
+    :paramtype name: str
     """
 
     id: str = rest_field(visibility=["read", "create", "update", "delete", "query"])
@@ -52,6 +56,10 @@ class XmlPet(_Model):
     :vartype id: str
     :ivar name: Required.
     :vartype name: str
+    :keyword id: Required.
+    :paramtype id: str
+    :keyword name: Required.
+    :paramtype name: str
     """
 
     id: str = rest_field(

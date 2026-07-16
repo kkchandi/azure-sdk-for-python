@@ -19,6 +19,10 @@ class ExpandParameters(_Model):
     :vartype field: str
     :ivar value: Required.
     :vartype value: str
+    :keyword field: Required.
+    :paramtype field: str
+    :keyword value: Required.
+    :paramtype value: str
     """
 
     field: str = rest_field(visibility=["read", "create", "update", "delete", "query"])

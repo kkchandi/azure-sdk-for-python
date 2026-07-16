@@ -24,6 +24,10 @@ class ActionRequest(_Model):
     :vartype action_type: str
     :ivar parameters: Additional action parameters.
     :vartype parameters: str
+    :keyword action_type: The action type to perform.
+    :paramtype action_type: str
+    :keyword parameters: Additional action parameters.
+    :paramtype parameters: str
     """
 
     action_type: Optional[str] = rest_field(
@@ -57,6 +61,8 @@ class ActionResult(_Model):
 
     :ivar result: The result of the action. Required.
     :vartype result: str
+    :keyword result: The result of the action. Required.
+    :paramtype result: str
     """
 
     result: str = rest_field(visibility=["read", "create", "update", "delete", "query"])
@@ -87,6 +93,10 @@ class ChangeAllowanceRequest(_Model):
     :vartype total_allowed: int
     :ivar reason: The reason for the change.
     :vartype reason: str
+    :keyword total_allowed: The new total allowed widgets.
+    :paramtype total_allowed: int
+    :keyword reason: The reason for the change.
+    :paramtype reason: str
     """
 
     total_allowed: Optional[int] = rest_field(
@@ -122,6 +132,10 @@ class ChangeAllowanceResult(_Model):
     :vartype total_allowed: int
     :ivar status: The status of the change. Required.
     :vartype status: str
+    :keyword total_allowed: The new total allowed widgets. Required.
+    :paramtype total_allowed: int
+    :keyword status: The status of the change. Required.
+    :paramtype status: str
     """
 
     total_allowed: int = rest_field(name="totalAllowed", visibility=["read", "create", "update", "delete", "query"])
@@ -155,6 +169,10 @@ class CheckNameAvailabilityRequest(_Model):
     :vartype name: str
     :ivar type: The resource type.
     :vartype type: str
+    :keyword name: The name of the resource for which availability needs to be checked.
+    :paramtype name: str
+    :keyword type: The resource type.
+    :paramtype type: str
     """
 
     name: Optional[str] = rest_field(visibility=["read", "create", "update", "delete", "query"])
@@ -192,6 +210,14 @@ class CheckNameAvailabilityResponse(_Model):
      ~azure.resourcemanager.operationtemplates.models.CheckNameAvailabilityReason
     :ivar message: Detailed reason why the given name is not available.
     :vartype message: str
+    :keyword name_available: Indicates if the resource name is available.
+    :paramtype name_available: bool
+    :keyword reason: The reason why the given name is not available. Known values are: "Invalid"
+     and "AlreadyExists".
+    :paramtype reason: str or
+     ~azure.resourcemanager.operationtemplates.models.CheckNameAvailabilityReason
+    :keyword message: Detailed reason why the given name is not available.
+    :paramtype message: str
     """
 
     name_available: Optional[bool] = rest_field(
@@ -276,6 +302,8 @@ class ErrorResponse(_Model):
 
     :ivar error: The error object.
     :vartype error: ~azure.resourcemanager.operationtemplates.models.ErrorDetail
+    :keyword error: The error object.
+    :paramtype error: ~azure.resourcemanager.operationtemplates.models.ErrorDetail
     """
 
     error: Optional["_models.ErrorDetail"] = rest_field(visibility=["read", "create", "update", "delete", "query"])
@@ -304,6 +332,8 @@ class ExportRequest(_Model):
 
     :ivar format: Format of the exported order. Required.
     :vartype format: str
+    :keyword format: Format of the exported order. Required.
+    :paramtype format: str
     """
 
     format: str = rest_field(visibility=["read", "create", "update", "delete", "query"])
@@ -332,6 +362,8 @@ class ExportResult(_Model):
 
     :ivar content: Content of the exported order. Required.
     :vartype content: str
+    :keyword content: Content of the exported order. Required.
+    :paramtype content: str
     """
 
     content: str = rest_field(visibility=["read", "create", "update", "delete", "query"])
@@ -373,6 +405,8 @@ class Operation(_Model):
     :ivar action_type: Extensible enum. Indicates the action type. "Internal" refers to actions
      that are for internal only APIs. "Internal"
     :vartype action_type: str or ~azure.resourcemanager.operationtemplates.models.ActionType
+    :keyword display: Localized display information for this particular operation.
+    :paramtype display: ~azure.resourcemanager.operationtemplates.models.OperationDisplay
     """
 
     name: Optional[str] = rest_field(visibility=["read"])
@@ -489,6 +523,10 @@ class TrackedResource(Resource):
     :vartype tags: dict[str, str]
     :ivar location: The geo-location where the resource lives. Required.
     :vartype location: str
+    :keyword location: The geo-location where the resource lives. Required.
+    :paramtype location: str
+    :keyword tags: Resource tags.
+    :paramtype tags: dict[str, str]
     """
 
     tags: Optional[dict[str, str]] = rest_field(visibility=["read", "create", "update", "delete", "query"])
@@ -536,6 +574,12 @@ class Order(TrackedResource):
     :vartype location: str
     :ivar properties: The resource-specific properties for this resource.
     :vartype properties: ~azure.resourcemanager.operationtemplates.models.OrderProperties
+    :keyword location: The geo-location where the resource lives. Required.
+    :paramtype location: str
+    :keyword tags: Resource tags.
+    :paramtype tags: dict[str, str]
+    :keyword properties: The resource-specific properties for this resource.
+    :paramtype properties: ~azure.resourcemanager.operationtemplates.models.OrderProperties
     """
 
     properties: Optional["_models.OrderProperties"] = rest_field(
@@ -572,6 +616,10 @@ class OrderProperties(_Model):
     :vartype amount: int
     :ivar provisioning_state: The provisioning state of the product.
     :vartype provisioning_state: str
+    :keyword product_id: The product ID of the order. Required.
+    :paramtype product_id: str
+    :keyword amount: Amount of the product. Required.
+    :paramtype amount: int
     """
 
     product_id: str = rest_field(name="productId", visibility=["read", "create", "update", "delete", "query"])
@@ -621,6 +669,12 @@ class Product(TrackedResource):
     :vartype location: str
     :ivar properties: The resource-specific properties for this resource.
     :vartype properties: ~azure.resourcemanager.operationtemplates.models.ProductProperties
+    :keyword location: The geo-location where the resource lives. Required.
+    :paramtype location: str
+    :keyword tags: Resource tags.
+    :paramtype tags: dict[str, str]
+    :keyword properties: The resource-specific properties for this resource.
+    :paramtype properties: ~azure.resourcemanager.operationtemplates.models.ProductProperties
     """
 
     properties: Optional["_models.ProductProperties"] = rest_field(
@@ -655,6 +709,8 @@ class ProductProperties(_Model):
     :vartype product_id: str
     :ivar provisioning_state: The provisioning state of the product.
     :vartype provisioning_state: str
+    :keyword product_id: The product ID.
+    :paramtype product_id: str
     """
 
     product_id: Optional[str] = rest_field(name="productId", visibility=["read", "create", "update", "delete", "query"])
@@ -698,6 +754,22 @@ class SystemData(_Model):
      ~azure.resourcemanager.operationtemplates.models.CreatedByType
     :ivar last_modified_at: The timestamp of resource last modification (UTC).
     :vartype last_modified_at: ~datetime.datetime
+    :keyword created_by: The identity that created the resource.
+    :paramtype created_by: str
+    :keyword created_by_type: The type of identity that created the resource. Known values are:
+     "User", "Application", "ManagedIdentity", and "Key".
+    :paramtype created_by_type: str or
+     ~azure.resourcemanager.operationtemplates.models.CreatedByType
+    :keyword created_at: The timestamp of resource creation (UTC).
+    :paramtype created_at: ~datetime.datetime
+    :keyword last_modified_by: The identity that last modified the resource.
+    :paramtype last_modified_by: str
+    :keyword last_modified_by_type: The type of identity that last modified the resource. Known
+     values are: "User", "Application", "ManagedIdentity", and "Key".
+    :paramtype last_modified_by_type: str or
+     ~azure.resourcemanager.operationtemplates.models.CreatedByType
+    :keyword last_modified_at: The timestamp of resource last modification (UTC).
+    :paramtype last_modified_at: ~datetime.datetime
     """
 
     created_by: Optional[str] = rest_field(name="createdBy", visibility=["read", "create", "update", "delete", "query"])
@@ -769,6 +841,12 @@ class Widget(TrackedResource):
     :vartype location: str
     :ivar properties: The resource-specific properties for this resource.
     :vartype properties: ~azure.resourcemanager.operationtemplates.models.WidgetProperties
+    :keyword location: The geo-location where the resource lives. Required.
+    :paramtype location: str
+    :keyword tags: Resource tags.
+    :paramtype tags: dict[str, str]
+    :keyword properties: The resource-specific properties for this resource.
+    :paramtype properties: ~azure.resourcemanager.operationtemplates.models.WidgetProperties
     """
 
     properties: Optional["_models.WidgetProperties"] = rest_field(
@@ -805,6 +883,10 @@ class WidgetProperties(_Model):
     :vartype description: str
     :ivar provisioning_state: The provisioning state of the widget.
     :vartype provisioning_state: str
+    :keyword name: The name of the widget.
+    :paramtype name: str
+    :keyword description: The description of the widget.
+    :paramtype description: str
     """
 
     name: Optional[str] = rest_field(visibility=["read", "create", "update", "delete", "query"])

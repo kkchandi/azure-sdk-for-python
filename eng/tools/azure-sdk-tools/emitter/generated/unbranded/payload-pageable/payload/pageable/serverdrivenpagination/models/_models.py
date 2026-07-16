@@ -14,6 +14,8 @@ class NestedLinkResponseNestedItems(_Model):
 
     :ivar pets: Required.
     :vartype pets: list[~payload.pageable.models.Pet]
+    :keyword pets: Required.
+    :paramtype pets: list[~payload.pageable.models.Pet]
     """
 
     pets: list["_models2.Pet"] = rest_field(visibility=["read", "create", "update", "delete", "query"])
@@ -42,6 +44,8 @@ class NestedLinkResponseNestedNext(_Model):
 
     :ivar next:
     :vartype next: str
+    :keyword next:
+    :paramtype next: str
     """
 
     next: Optional[str] = rest_field(visibility=["read", "create", "update", "delete", "query"])

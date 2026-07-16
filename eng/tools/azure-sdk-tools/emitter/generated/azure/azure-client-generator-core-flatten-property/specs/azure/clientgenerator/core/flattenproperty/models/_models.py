@@ -22,6 +22,10 @@ class ChildFlattenModel(_Model):
     :vartype summary: str
     :ivar properties: Required.
     :vartype properties: ~specs.azure.clientgenerator.core.flattenproperty.models.ChildModel
+    :keyword summary: Required.
+    :paramtype summary: str
+    :keyword properties: Required.
+    :paramtype properties: ~specs.azure.clientgenerator.core.flattenproperty.models.ChildModel
     """
 
     summary: str = rest_field(visibility=["read", "create", "update", "delete", "query"])
@@ -75,6 +79,10 @@ class ChildModel(_Model):
     :vartype description: str
     :ivar age: Required.
     :vartype age: int
+    :keyword description: Required.
+    :paramtype description: str
+    :keyword age: Required.
+    :paramtype age: int
     """
 
     description: str = rest_field(visibility=["read", "create", "update", "delete", "query"])
@@ -108,6 +116,10 @@ class FlattenModel(_Model):
     :vartype name: str
     :ivar properties: Required.
     :vartype properties: ~specs.azure.clientgenerator.core.flattenproperty.models.ChildModel
+    :keyword name: Required.
+    :paramtype name: str
+    :keyword properties: Required.
+    :paramtype properties: ~specs.azure.clientgenerator.core.flattenproperty.models.ChildModel
     """
 
     name: str = rest_field(visibility=["read", "create", "update", "delete", "query"])
@@ -161,6 +173,10 @@ class FlattenUnknownModel(_Model):
     :vartype name: str
     :ivar properties:
     :vartype properties: any
+    :keyword name: Required.
+    :paramtype name: str
+    :keyword properties:
+    :paramtype properties: any
     """
 
     name: str = rest_field(visibility=["read", "create", "update", "delete", "query"])
@@ -213,6 +229,11 @@ class NestedFlattenModel(_Model):
     :vartype name: str
     :ivar properties: Required.
     :vartype properties: ~specs.azure.clientgenerator.core.flattenproperty.models.ChildFlattenModel
+    :keyword name: Required.
+    :paramtype name: str
+    :keyword properties: Required.
+    :paramtype properties:
+     ~specs.azure.clientgenerator.core.flattenproperty.models.ChildFlattenModel
     """
 
     name: str = rest_field(visibility=["read", "create", "update", "delete", "query"])
@@ -246,6 +267,11 @@ class Solution(_Model):
     :vartype name: str
     :ivar properties:
     :vartype properties:
+     ~specs.azure.clientgenerator.core.flattenproperty.models.SolutionProperties
+    :keyword name: Required.
+    :paramtype name: str
+    :keyword properties:
+    :paramtype properties:
      ~specs.azure.clientgenerator.core.flattenproperty.models.SolutionProperties
     """
 

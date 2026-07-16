@@ -20,6 +20,8 @@ class ListWidgetsResponse(_Model):
 
     :ivar widgets: Required.
     :vartype widgets: list[~specs.azure.versioning.previewversion.models.Widget]
+    :keyword widgets: Required.
+    :paramtype widgets: list[~specs.azure.versioning.previewversion.models.Widget]
     """
 
     widgets: list["_models.Widget"] = rest_field(visibility=["read", "create", "update", "delete", "query"])
@@ -48,6 +50,8 @@ class UpdateWidgetColorRequest(_Model):
 
     :ivar color: New color for the widget. Required.
     :vartype color: str
+    :keyword color: New color for the widget. Required.
+    :paramtype color: str
     """
 
     color: str = rest_field(visibility=["read", "create", "update", "delete", "query"])
@@ -80,6 +84,12 @@ class Widget(_Model):
     :vartype name: str
     :ivar color: Widget color, only available in preview version.
     :vartype color: str
+    :keyword id: Widget identifier. Required.
+    :paramtype id: str
+    :keyword name: Widget name. Required.
+    :paramtype name: str
+    :keyword color: Widget color, only available in preview version.
+    :paramtype color: str
     """
 
     id: str = rest_field(visibility=["read", "create", "update", "delete", "query"])

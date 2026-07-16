@@ -11,6 +11,8 @@ class PngImageAsJson(_Model):
 
     :ivar content: Required.
     :vartype content: bytes
+    :keyword content: Required.
+    :paramtype content: bytes
     """
 
     content: bytes = rest_field(visibility=["read", "create", "update", "delete", "query"], format="base64")

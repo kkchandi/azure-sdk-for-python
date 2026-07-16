@@ -17,6 +17,8 @@ class BodyModel(_Model):
 
     :ivar name: Required.
     :vartype name: str
+    :keyword name: Required.
+    :paramtype name: str
     """
 
     name: str = rest_field(visibility=["read", "create", "update", "delete", "query"])

@@ -23,6 +23,14 @@ class ModelWithDefaultValues(_Model):
     :vartype tier: str
     :ivar retry: Retry property with client default value of true.
     :vartype retry: bool
+    :keyword name: Name property with no default value. Required.
+    :paramtype name: str
+    :keyword timeout: Timeout property with client default value of 30.
+    :paramtype timeout: int
+    :keyword tier: Tier property with client default value of 'standard'.
+    :paramtype tier: str
+    :keyword retry: Retry property with client default value of true.
+    :paramtype retry: bool
     """
 
     name: str = rest_field(visibility=["read", "create", "update", "delete", "query"])

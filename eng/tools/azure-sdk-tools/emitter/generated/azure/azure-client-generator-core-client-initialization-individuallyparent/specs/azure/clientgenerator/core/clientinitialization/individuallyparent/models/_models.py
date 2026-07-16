@@ -24,6 +24,14 @@ class BlobProperties(_Model):
     :vartype content_type: str
     :ivar created_on: Required.
     :vartype created_on: ~datetime.datetime
+    :keyword name: Required.
+    :paramtype name: str
+    :keyword size: Required.
+    :paramtype size: int
+    :keyword content_type: Required.
+    :paramtype content_type: str
+    :keyword created_on: Required.
+    :paramtype created_on: ~datetime.datetime
     """
 
     name: str = rest_field(visibility=["read", "create", "update", "delete", "query"])

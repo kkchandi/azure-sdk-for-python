@@ -12,6 +12,8 @@ class DefaultDatetimeProperty(_Model):
 
     :ivar value: Required.
     :vartype value: ~datetime.datetime
+    :keyword value: Required.
+    :paramtype value: ~datetime.datetime
     """
 
     value: datetime.datetime = rest_field(visibility=["read", "create", "update", "delete", "query"], format="rfc3339")
@@ -40,6 +42,8 @@ class Rfc3339DatetimeProperty(_Model):
 
     :ivar value: Required.
     :vartype value: ~datetime.datetime
+    :keyword value: Required.
+    :paramtype value: ~datetime.datetime
     """
 
     value: datetime.datetime = rest_field(visibility=["read", "create", "update", "delete", "query"], format="rfc3339")
@@ -68,6 +72,8 @@ class Rfc7231DatetimeProperty(_Model):
 
     :ivar value: Required.
     :vartype value: ~datetime.datetime
+    :keyword value: Required.
+    :paramtype value: ~datetime.datetime
     """
 
     value: datetime.datetime = rest_field(visibility=["read", "create", "update", "delete", "query"], format="rfc7231")
@@ -96,6 +102,8 @@ class UnixTimestampArrayDatetimeProperty(_Model):
 
     :ivar value: Required.
     :vartype value: list[~datetime.datetime]
+    :keyword value: Required.
+    :paramtype value: list[~datetime.datetime]
     """
 
     value: list[datetime.datetime] = rest_field(
@@ -126,6 +134,8 @@ class UnixTimestampDatetimeProperty(_Model):
 
     :ivar value: Required.
     :vartype value: ~datetime.datetime
+    :keyword value: Required.
+    :paramtype value: ~datetime.datetime
     """
 
     value: datetime.datetime = rest_field(

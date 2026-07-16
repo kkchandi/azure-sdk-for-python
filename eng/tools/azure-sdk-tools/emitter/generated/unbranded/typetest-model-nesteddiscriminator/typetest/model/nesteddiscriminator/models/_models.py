@@ -20,6 +20,10 @@ class Fish(_Model):
     :vartype kind: str
     :ivar age: Required.
     :vartype age: int
+    :keyword kind: Discriminator property for Fish. Required. Default value is None.
+    :paramtype kind: str
+    :keyword age: Required.
+    :paramtype age: int
     """
 
     __mapping__: dict[str, _Model] = {}
@@ -60,6 +64,10 @@ class Shark(Fish, discriminator="shark"):
     :vartype kind: str
     :ivar sharktype: Required. Default value is None.
     :vartype sharktype: str
+    :keyword age: Required.
+    :paramtype age: int
+    :keyword sharktype: Required. Default value is None.
+    :paramtype sharktype: str
     """
 
     __mapping__: dict[str, _Model] = {}
@@ -97,6 +105,8 @@ class GoblinShark(Shark, discriminator="goblin"):
     :vartype kind: str
     :ivar sharktype: Required. Default value is "goblin".
     :vartype sharktype: str
+    :keyword age: Required.
+    :paramtype age: int
     """
 
     __mapping__: dict[str, _Model] = {}
@@ -136,6 +146,14 @@ class Salmon(Fish, discriminator="salmon"):
     :vartype hate: dict[str, ~typetest.model.nesteddiscriminator.models.Fish]
     :ivar partner:
     :vartype partner: ~typetest.model.nesteddiscriminator.models.Fish
+    :keyword age: Required.
+    :paramtype age: int
+    :keyword friends:
+    :paramtype friends: list[~typetest.model.nesteddiscriminator.models.Fish]
+    :keyword hate:
+    :paramtype hate: dict[str, ~typetest.model.nesteddiscriminator.models.Fish]
+    :keyword partner:
+    :paramtype partner: ~typetest.model.nesteddiscriminator.models.Fish
     """
 
     kind: Literal["salmon"] = rest_discriminator(name="kind", visibility=["read", "create", "update", "delete", "query"])  # type: ignore
@@ -175,6 +193,8 @@ class SawShark(Shark, discriminator="saw"):
     :vartype kind: str
     :ivar sharktype: Required. Default value is "saw".
     :vartype sharktype: str
+    :keyword age: Required.
+    :paramtype age: int
     """
 
     __mapping__: dict[str, _Model] = {}

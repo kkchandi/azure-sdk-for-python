@@ -63,6 +63,10 @@ class TrackedResource(Resource):
     :vartype tags: dict[str, str]
     :ivar location: The geo-location where the resource lives. Required.
     :vartype location: str
+    :keyword location: The geo-location where the resource lives. Required.
+    :paramtype location: str
+    :keyword tags: Resource tags.
+    :paramtype tags: dict[str, str]
     """
 
     tags: Optional[dict[str, str]] = rest_field(visibility=["read", "create", "update", "delete", "query"])
@@ -109,6 +113,12 @@ class Disk(TrackedResource):
     :vartype location: str
     :ivar properties: The resource-specific properties for this resource.
     :vartype properties: ~azure.resourcemanager.multiservice.combined.models.DiskProperties
+    :keyword location: The geo-location where the resource lives. Required.
+    :paramtype location: str
+    :keyword tags: Resource tags.
+    :paramtype tags: dict[str, str]
+    :keyword properties: The resource-specific properties for this resource.
+    :paramtype properties: ~azure.resourcemanager.multiservice.combined.models.DiskProperties
     """
 
     properties: Optional["_models.DiskProperties"] = rest_field(
@@ -200,6 +210,8 @@ class ErrorResponse(_Model):
 
     :ivar error: The error object.
     :vartype error: ~azure.resourcemanager.multiservice.combined.models.ErrorDetail
+    :keyword error: The error object.
+    :paramtype error: ~azure.resourcemanager.multiservice.combined.models.ErrorDetail
     """
 
     error: Optional["_models.ErrorDetail"] = rest_field(visibility=["read", "create", "update", "delete", "query"])
@@ -242,6 +254,22 @@ class SystemData(_Model):
      ~azure.resourcemanager.multiservice.combined.models.CreatedByType
     :ivar last_modified_at: The timestamp of resource last modification (UTC).
     :vartype last_modified_at: ~datetime.datetime
+    :keyword created_by: The identity that created the resource.
+    :paramtype created_by: str
+    :keyword created_by_type: The type of identity that created the resource. Known values are:
+     "User", "Application", "ManagedIdentity", and "Key".
+    :paramtype created_by_type: str or
+     ~azure.resourcemanager.multiservice.combined.models.CreatedByType
+    :keyword created_at: The timestamp of resource creation (UTC).
+    :paramtype created_at: ~datetime.datetime
+    :keyword last_modified_by: The identity that last modified the resource.
+    :paramtype last_modified_by: str
+    :keyword last_modified_by_type: The type of identity that last modified the resource. Known
+     values are: "User", "Application", "ManagedIdentity", and "Key".
+    :paramtype last_modified_by_type: str or
+     ~azure.resourcemanager.multiservice.combined.models.CreatedByType
+    :keyword last_modified_at: The timestamp of resource last modification (UTC).
+    :paramtype last_modified_at: ~datetime.datetime
     """
 
     created_by: Optional[str] = rest_field(name="createdBy", visibility=["read", "create", "update", "delete", "query"])
@@ -312,6 +340,13 @@ class VirtualMachine(TrackedResource):
     :vartype location: str
     :ivar properties: The resource-specific properties for this resource.
     :vartype properties:
+     ~azure.resourcemanager.multiservice.combined.models.VirtualMachineProperties
+    :keyword location: The geo-location where the resource lives. Required.
+    :paramtype location: str
+    :keyword tags: Resource tags.
+    :paramtype tags: dict[str, str]
+    :keyword properties: The resource-specific properties for this resource.
+    :paramtype properties:
      ~azure.resourcemanager.multiservice.combined.models.VirtualMachineProperties
     """
 

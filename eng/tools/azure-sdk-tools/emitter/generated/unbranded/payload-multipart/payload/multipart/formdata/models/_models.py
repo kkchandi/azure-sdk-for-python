@@ -12,6 +12,8 @@ class AnonymousModelRequest(_Model):
 
     :ivar profile_image: Required.
     :vartype profile_image: ~payload.multipart._utils.utils.FileType
+    :keyword profile_image: Required.
+    :paramtype profile_image: ~payload.multipart._utils.utils.FileType
     """
 
     profile_image: FileType = rest_field(

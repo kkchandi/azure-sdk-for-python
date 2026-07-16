@@ -14,6 +14,8 @@ class CommaDelimitedArrayProperty(_Model):
 
     :ivar value: Required.
     :vartype value: list[str]
+    :keyword value: Required.
+    :paramtype value: list[str]
     """
 
     value: list[str] = rest_field(visibility=["read", "create", "update", "delete", "query"], format="commaDelimited")
@@ -42,6 +44,8 @@ class CommaDelimitedEnumArrayProperty(_Model):
 
     :ivar value: Required.
     :vartype value: list[str or ~encode.array.models.Colors]
+    :keyword value: Required.
+    :paramtype value: list[str or ~encode.array.models.Colors]
     """
 
     value: list[Union[str, "_models.Colors"]] = rest_field(
@@ -72,6 +76,8 @@ class CommaDelimitedExtensibleEnumArrayProperty(_Model):  # pylint: disable=name
 
     :ivar value: Required.
     :vartype value: list[str or ~encode.array.models.ColorsExtensibleEnum]
+    :keyword value: Required.
+    :paramtype value: list[str or ~encode.array.models.ColorsExtensibleEnum]
     """
 
     value: list[Union[str, "_models.ColorsExtensibleEnum"]] = rest_field(
@@ -102,6 +108,8 @@ class NewlineDelimitedArrayProperty(_Model):
 
     :ivar value: Required.
     :vartype value: list[str]
+    :keyword value: Required.
+    :paramtype value: list[str]
     """
 
     value: list[str] = rest_field(visibility=["read", "create", "update", "delete", "query"], format="newlineDelimited")
@@ -130,6 +138,8 @@ class NewlineDelimitedEnumArrayProperty(_Model):
 
     :ivar value: Required.
     :vartype value: list[str or ~encode.array.models.Colors]
+    :keyword value: Required.
+    :paramtype value: list[str or ~encode.array.models.Colors]
     """
 
     value: list[Union[str, "_models.Colors"]] = rest_field(
@@ -160,6 +170,8 @@ class NewlineDelimitedExtensibleEnumArrayProperty(_Model):  # pylint: disable=na
 
     :ivar value: Required.
     :vartype value: list[str or ~encode.array.models.ColorsExtensibleEnum]
+    :keyword value: Required.
+    :paramtype value: list[str or ~encode.array.models.ColorsExtensibleEnum]
     """
 
     value: list[Union[str, "_models.ColorsExtensibleEnum"]] = rest_field(
@@ -190,6 +202,8 @@ class PipeDelimitedArrayProperty(_Model):
 
     :ivar value: Required.
     :vartype value: list[str]
+    :keyword value: Required.
+    :paramtype value: list[str]
     """
 
     value: list[str] = rest_field(visibility=["read", "create", "update", "delete", "query"], format="pipeDelimited")
@@ -218,6 +232,8 @@ class PipeDelimitedEnumArrayProperty(_Model):
 
     :ivar value: Required.
     :vartype value: list[str or ~encode.array.models.Colors]
+    :keyword value: Required.
+    :paramtype value: list[str or ~encode.array.models.Colors]
     """
 
     value: list[Union[str, "_models.Colors"]] = rest_field(
@@ -248,6 +264,8 @@ class PipeDelimitedExtensibleEnumArrayProperty(_Model):
 
     :ivar value: Required.
     :vartype value: list[str or ~encode.array.models.ColorsExtensibleEnum]
+    :keyword value: Required.
+    :paramtype value: list[str or ~encode.array.models.ColorsExtensibleEnum]
     """
 
     value: list[Union[str, "_models.ColorsExtensibleEnum"]] = rest_field(
@@ -278,6 +296,8 @@ class SpaceDelimitedArrayProperty(_Model):
 
     :ivar value: Required.
     :vartype value: list[str]
+    :keyword value: Required.
+    :paramtype value: list[str]
     """
 
     value: list[str] = rest_field(visibility=["read", "create", "update", "delete", "query"], format="spaceDelimited")
@@ -306,6 +326,8 @@ class SpaceDelimitedEnumArrayProperty(_Model):
 
     :ivar value: Required.
     :vartype value: list[str or ~encode.array.models.Colors]
+    :keyword value: Required.
+    :paramtype value: list[str or ~encode.array.models.Colors]
     """
 
     value: list[Union[str, "_models.Colors"]] = rest_field(
@@ -336,6 +358,8 @@ class SpaceDelimitedExtensibleEnumArrayProperty(_Model):  # pylint: disable=name
 
     :ivar value: Required.
     :vartype value: list[str or ~encode.array.models.ColorsExtensibleEnum]
+    :keyword value: Required.
+    :paramtype value: list[str or ~encode.array.models.ColorsExtensibleEnum]
     """
 
     value: list[Union[str, "_models.ColorsExtensibleEnum"]] = rest_field(

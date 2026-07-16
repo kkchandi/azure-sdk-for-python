@@ -14,6 +14,8 @@ class Element(_Model):
 
     :ivar extension:
     :vartype extension: list[~typetest.model.recursive.models.Extension]
+    :keyword extension:
+    :paramtype extension: list[~typetest.model.recursive.models.Extension]
     """
 
     extension: Optional[list["_models.Extension"]] = rest_field(
@@ -45,6 +47,10 @@ class Extension(Element):
     :vartype extension: list[~typetest.model.recursive.models.Extension]
     :ivar level: Required.
     :vartype level: int
+    :keyword level: Required.
+    :paramtype level: int
+    :keyword extension:
+    :paramtype extension: list[~typetest.model.recursive.models.Extension]
     """
 
     level: int = rest_field(visibility=["read", "create", "update", "delete", "query"])

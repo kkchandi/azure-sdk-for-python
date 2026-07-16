@@ -23,6 +23,11 @@ class SecondModel(_Model):
     :vartype status: str or ~client.naming.enumconflict.secondnamespace.models.SecondStatus
     :ivar description: Description of the item. Required.
     :vartype description: str
+    :keyword status: Status from second namespace. Required. Known values are: "running" and
+     "stopped".
+    :paramtype status: str or ~client.naming.enumconflict.secondnamespace.models.SecondStatus
+    :keyword description: Description of the item. Required.
+    :paramtype description: str
     """
 
     status: Union[str, "_models.SecondStatus"] = rest_field(visibility=["read", "create", "update", "delete", "query"])

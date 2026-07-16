@@ -11,6 +11,8 @@ class InvalidAuth(_Model):
 
     :ivar error: Required.
     :vartype error: str
+    :keyword error: Required.
+    :paramtype error: str
     """
 
     error: str = rest_field(visibility=["read", "create", "update", "delete", "query"])

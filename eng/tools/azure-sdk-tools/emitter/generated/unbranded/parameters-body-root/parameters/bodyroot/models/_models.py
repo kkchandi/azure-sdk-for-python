@@ -18,6 +18,12 @@ class BodyRootModel(_Model):
     :vartype link_type: str
     :ivar was_successful:
     :vartype was_successful: bool
+    :keyword category:
+    :paramtype category: str
+    :keyword link_type:
+    :paramtype link_type: str
+    :keyword was_successful:
+    :paramtype was_successful: bool
     """
 
     category: Optional[str] = rest_field(visibility=["read", "create", "update", "delete", "query"])
@@ -51,6 +57,8 @@ class NestedParameterBody(_Model):
 
     :ivar body_root_parameters: Required.
     :vartype body_root_parameters: ~parameters.bodyroot.models.BodyRootModel
+    :keyword body_root_parameters: Required.
+    :paramtype body_root_parameters: ~parameters.bodyroot.models.BodyRootModel
     """
 
     body_root_parameters: "_models.BodyRootModel" = rest_field(

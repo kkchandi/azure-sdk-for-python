@@ -43,6 +43,21 @@ class BulletPointsModel(_Model):
      * **Bold bullet point**
      * *Italic bullet point*. Required. Known values are: "Simple", "Bold", and "Italic".
     :vartype prop: str or ~specs.documentation.models.BulletPointsEnum
+    :keyword prop: This property uses an enum with bullet point documentation. The enum
+      documentation includes various formatting styles to test rendering. The styles are:
+
+      * Simple bullet point. This bullet point is going to be very long to test how text
+        wrapping is handled in bullet points within documentation comments. It should properly indent
+        the wrapped lines.
+      * Bullet point with **bold text**. This bullet point is also intentionally long to see how
+        the formatting is preserved when the text wraps onto multiple
+      * Bullet point with *italic text*. Similar to the previous points, this one is extended to
+        ensure that the wrapping and formatting are correctly applied in the output.
+      * Complex bullet point with **bold** and *italic* combined. This bullet point combines
+        both bold and italic formatting and is long enough to test the wrapping behavior in such cases.
+      * **Bold bullet point**
+      * *Italic bullet point*. Required. Known values are: "Simple", "Bold", and "Italic".
+    :paramtype prop: str or ~specs.documentation.models.BulletPointsEnum
     """
 
     prop: Union[str, "_models.BulletPointsEnum"] = rest_field(

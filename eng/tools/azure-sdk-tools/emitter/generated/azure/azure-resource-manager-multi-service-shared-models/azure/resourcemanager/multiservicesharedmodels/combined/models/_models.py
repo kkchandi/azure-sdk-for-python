@@ -68,6 +68,8 @@ class ErrorResponse(_Model):
 
     :ivar error: The error object.
     :vartype error: ~azure.resourcemanager.multiservicesharedmodels.combined.models.ErrorDetail
+    :keyword error: The error object.
+    :paramtype error: ~azure.resourcemanager.multiservicesharedmodels.combined.models.ErrorDetail
     """
 
     error: Optional["_models.ErrorDetail"] = rest_field(visibility=["read", "create", "update", "delete", "query"])
@@ -129,6 +131,12 @@ class SharedMetadata(_Model):
     :vartype created_by: str
     :ivar tags: Tags associated with the resource.
     :vartype tags: dict[str, str]
+    :keyword created_at: Creation timestamp of the resource.
+    :paramtype created_at: ~datetime.datetime
+    :keyword created_by: Creator of the resource.
+    :paramtype created_by: str
+    :keyword tags: Tags associated with the resource.
+    :paramtype tags: dict[str, str]
     """
 
     created_at: Optional[datetime.datetime] = rest_field(
@@ -179,6 +187,10 @@ class TrackedResource(Resource):
     :vartype tags: dict[str, str]
     :ivar location: The geo-location where the resource lives. Required.
     :vartype location: str
+    :keyword location: The geo-location where the resource lives. Required.
+    :paramtype location: str
+    :keyword tags: Resource tags.
+    :paramtype tags: dict[str, str]
     """
 
     tags: Optional[dict[str, str]] = rest_field(visibility=["read", "create", "update", "delete", "query"])
@@ -227,6 +239,13 @@ class StorageAccount(TrackedResource):
     :ivar properties: The resource-specific properties for this resource.
     :vartype properties:
      ~azure.resourcemanager.multiservicesharedmodels.combined.models.StorageAccountProperties
+    :keyword location: The geo-location where the resource lives. Required.
+    :paramtype location: str
+    :keyword tags: Resource tags.
+    :paramtype tags: dict[str, str]
+    :keyword properties: The resource-specific properties for this resource.
+    :paramtype properties:
+     ~azure.resourcemanager.multiservicesharedmodels.combined.models.StorageAccountProperties
     """
 
     properties: Optional["_models.StorageAccountProperties"] = rest_field(
@@ -262,6 +281,9 @@ class StorageAccountProperties(_Model):
      ~azure.resourcemanager.multiservicesharedmodels.combined.models.ResourceProvisioningState
     :ivar metadata: Shared metadata for the storage account.
     :vartype metadata:
+     ~azure.resourcemanager.multiservicesharedmodels.combined.models.SharedMetadata
+    :keyword metadata: Shared metadata for the storage account.
+    :paramtype metadata:
      ~azure.resourcemanager.multiservicesharedmodels.combined.models.SharedMetadata
     """
 
@@ -311,6 +333,22 @@ class SystemData(_Model):
      ~azure.resourcemanager.multiservicesharedmodels.combined.models.CreatedByType
     :ivar last_modified_at: The timestamp of resource last modification (UTC).
     :vartype last_modified_at: ~datetime.datetime
+    :keyword created_by: The identity that created the resource.
+    :paramtype created_by: str
+    :keyword created_by_type: The type of identity that created the resource. Known values are:
+     "User", "Application", "ManagedIdentity", and "Key".
+    :paramtype created_by_type: str or
+     ~azure.resourcemanager.multiservicesharedmodels.combined.models.CreatedByType
+    :keyword created_at: The timestamp of resource creation (UTC).
+    :paramtype created_at: ~datetime.datetime
+    :keyword last_modified_by: The identity that last modified the resource.
+    :paramtype last_modified_by: str
+    :keyword last_modified_by_type: The type of identity that last modified the resource. Known
+     values are: "User", "Application", "ManagedIdentity", and "Key".
+    :paramtype last_modified_by_type: str or
+     ~azure.resourcemanager.multiservicesharedmodels.combined.models.CreatedByType
+    :keyword last_modified_at: The timestamp of resource last modification (UTC).
+    :paramtype last_modified_at: ~datetime.datetime
     """
 
     created_by: Optional[str] = rest_field(name="createdBy", visibility=["read", "create", "update", "delete", "query"])
@@ -383,6 +421,13 @@ class VirtualMachine(TrackedResource):
     :ivar properties: The resource-specific properties for this resource.
     :vartype properties:
      ~azure.resourcemanager.multiservicesharedmodels.combined.models.VirtualMachineProperties
+    :keyword location: The geo-location where the resource lives. Required.
+    :paramtype location: str
+    :keyword tags: Resource tags.
+    :paramtype tags: dict[str, str]
+    :keyword properties: The resource-specific properties for this resource.
+    :paramtype properties:
+     ~azure.resourcemanager.multiservicesharedmodels.combined.models.VirtualMachineProperties
     """
 
     properties: Optional["_models.VirtualMachineProperties"] = rest_field(
@@ -418,6 +463,9 @@ class VirtualMachineProperties(_Model):
      ~azure.resourcemanager.multiservicesharedmodels.combined.models.ResourceProvisioningState
     :ivar metadata: Shared metadata for the virtual machine.
     :vartype metadata:
+     ~azure.resourcemanager.multiservicesharedmodels.combined.models.SharedMetadata
+    :keyword metadata: Shared metadata for the virtual machine.
+    :paramtype metadata:
      ~azure.resourcemanager.multiservicesharedmodels.combined.models.SharedMetadata
     """
 

@@ -15,6 +15,8 @@ class Address(_Model):
 
     :ivar city: Required.
     :vartype city: str
+    :keyword city: Required.
+    :paramtype city: str
     """
 
     city: str = rest_field(visibility=["read", "create", "update", "delete", "query"])
@@ -45,6 +47,10 @@ class BinaryArrayPartsRequest(_Model):
     :vartype id: str
     :ivar pictures: Required.
     :vartype pictures: list[~payload.multipart._utils.utils.FileType]
+    :keyword id: Required.
+    :paramtype id: str
+    :keyword pictures: Required.
+    :paramtype pictures: list[~payload.multipart._utils.utils.FileType]
     """
 
     id: str = rest_field(visibility=["read", "create", "update", "delete", "query"])
@@ -86,6 +92,16 @@ class ComplexHttpPartsModelRequest(_Model):
     :vartype previous_addresses: list[~payload.multipart.models.Address]
     :ivar pictures: Required.
     :vartype pictures: list[~payload.multipart._utils.utils.FileType]
+    :keyword id: Required.
+    :paramtype id: str
+    :keyword address: Required.
+    :paramtype address: ~payload.multipart.models.Address
+    :keyword profile_image: Required.
+    :paramtype profile_image: ~payload.multipart._utils.utils.FileType
+    :keyword previous_addresses: Required.
+    :paramtype previous_addresses: list[~payload.multipart.models.Address]
+    :keyword pictures: Required.
+    :paramtype pictures: list[~payload.multipart._utils.utils.FileType]
     """
 
     id: str = rest_field(visibility=["read", "create", "update", "delete", "query"])
@@ -138,6 +154,14 @@ class ComplexPartsRequest(_Model):
     :vartype profile_image: ~payload.multipart._utils.utils.FileType
     :ivar pictures: Required.
     :vartype pictures: list[~payload.multipart._utils.utils.FileType]
+    :keyword id: Required.
+    :paramtype id: str
+    :keyword address: Required.
+    :paramtype address: ~payload.multipart.models.Address
+    :keyword profile_image: Required.
+    :paramtype profile_image: ~payload.multipart._utils.utils.FileType
+    :keyword pictures: Required.
+    :paramtype pictures: list[~payload.multipart._utils.utils.FileType]
     """
 
     id: str = rest_field(visibility=["read", "create", "update", "delete", "query"])
@@ -179,6 +203,8 @@ class FileWithHttpPartOptionalContentTypeRequest(_Model):  # pylint: disable=nam
 
     :ivar profile_image: Required.
     :vartype profile_image: ~payload.multipart._utils.utils.FileType
+    :keyword profile_image: Required.
+    :paramtype profile_image: ~payload.multipart._utils.utils.FileType
     """
 
     profile_image: FileType = rest_field(
@@ -209,6 +235,8 @@ class FileWithHttpPartRequiredContentTypeRequest(_Model):  # pylint: disable=nam
 
     :ivar profile_image: Required.
     :vartype profile_image: ~payload.multipart._utils.utils.FileType
+    :keyword profile_image: Required.
+    :paramtype profile_image: ~payload.multipart._utils.utils.FileType
     """
 
     profile_image: FileType = rest_field(
@@ -239,6 +267,8 @@ class FileWithHttpPartSpecificContentTypeRequest(_Model):  # pylint: disable=nam
 
     :ivar profile_image: Required.
     :vartype profile_image: ~payload.multipart._utils.utils.FileType
+    :keyword profile_image: Required.
+    :paramtype profile_image: ~payload.multipart._utils.utils.FileType
     """
 
     profile_image: FileType = rest_field(
@@ -271,6 +301,10 @@ class JsonPartRequest(_Model):
     :vartype address: ~payload.multipart.models.Address
     :ivar profile_image: Required.
     :vartype profile_image: ~payload.multipart._utils.utils.FileType
+    :keyword address: Required.
+    :paramtype address: ~payload.multipart.models.Address
+    :keyword profile_image: Required.
+    :paramtype profile_image: ~payload.multipart._utils.utils.FileType
     """
 
     address: "_models.Address" = rest_field(visibility=["read", "create", "update", "delete", "query"])
@@ -306,6 +340,10 @@ class MultiBinaryPartsRequest(_Model):
     :vartype profile_image: ~payload.multipart._utils.utils.FileType
     :ivar picture:
     :vartype picture: ~payload.multipart._utils.utils.FileType
+    :keyword profile_image: Required.
+    :paramtype profile_image: ~payload.multipart._utils.utils.FileType
+    :keyword picture:
+    :paramtype picture: ~payload.multipart._utils.utils.FileType
     """
 
     profile_image: FileType = rest_field(
@@ -342,6 +380,10 @@ class MultiPartOptionalRequest(_Model):
     :vartype id: str
     :ivar profile_image:
     :vartype profile_image: ~payload.multipart._utils.utils.FileType
+    :keyword id:
+    :paramtype id: str
+    :keyword profile_image:
+    :paramtype profile_image: ~payload.multipart._utils.utils.FileType
     """
 
     id: Optional[str] = rest_field(visibility=["read", "create", "update", "delete", "query"])
@@ -375,6 +417,10 @@ class MultiPartRequest(_Model):
     :vartype id: str
     :ivar profile_image: Required.
     :vartype profile_image: ~payload.multipart._utils.utils.FileType
+    :keyword id: Required.
+    :paramtype id: str
+    :keyword profile_image: Required.
+    :paramtype profile_image: ~payload.multipart._utils.utils.FileType
     """
 
     id: str = rest_field(visibility=["read", "create", "update", "delete", "query"])
@@ -410,6 +456,10 @@ class MultiPartRequestWithWireName(_Model):
     :vartype identifier: str
     :ivar image: Required.
     :vartype image: ~payload.multipart._utils.utils.FileType
+    :keyword identifier: Required.
+    :paramtype identifier: str
+    :keyword image: Required.
+    :paramtype image: ~payload.multipart._utils.utils.FileType
     """
 
     identifier: str = rest_field(name="id", visibility=["read", "create", "update", "delete", "query"])

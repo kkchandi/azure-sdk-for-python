@@ -21,6 +21,10 @@ class Geometry(_Model):
     :vartype type: str
     :ivar coordinates: Required.
     :vartype coordinates: list[float]
+    :keyword type: Required.
+    :paramtype type: str
+    :keyword coordinates: Required.
+    :paramtype coordinates: list[float]
     """
 
     type: str = rest_field(visibility=["read", "create", "update", "delete", "query"])
@@ -54,6 +58,10 @@ class ModelWithFeatureProperty(_Model):
     :vartype feature: ~geojson.Feature
     :ivar additional_property: Required.
     :vartype additional_property: str
+    :keyword feature: Required.
+    :paramtype feature: ~geojson.Feature
+    :keyword additional_property: Required.
+    :paramtype additional_property: str
     """
 
     feature: geojson.Feature = rest_field(visibility=["read", "create", "update", "delete", "query"])

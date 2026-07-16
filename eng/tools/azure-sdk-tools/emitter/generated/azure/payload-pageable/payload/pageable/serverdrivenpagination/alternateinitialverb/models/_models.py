@@ -17,6 +17,8 @@ class Filter(_Model):
 
     :ivar filter: Required.
     :vartype filter: str
+    :keyword filter: Required.
+    :paramtype filter: str
     """
 
     filter: str = rest_field(visibility=["read", "create", "update", "delete", "query"])

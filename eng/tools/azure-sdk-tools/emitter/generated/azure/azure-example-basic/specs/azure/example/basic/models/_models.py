@@ -26,6 +26,14 @@ class ActionRequest(_Model):
     :vartype array_property: list[str]
     :ivar record_property:
     :vartype record_property: dict[str, str]
+    :keyword string_property: Required.
+    :paramtype string_property: str
+    :keyword model_property:
+    :paramtype model_property: ~specs.azure.example.basic.models.Model
+    :keyword array_property:
+    :paramtype array_property: list[str]
+    :keyword record_property:
+    :paramtype record_property: dict[str, str]
     """
 
     string_property: str = rest_field(name="stringProperty", visibility=["read", "create", "update", "delete", "query"])
@@ -72,6 +80,14 @@ class ActionResponse(_Model):
     :vartype array_property: list[str]
     :ivar record_property:
     :vartype record_property: dict[str, str]
+    :keyword string_property: Required.
+    :paramtype string_property: str
+    :keyword model_property:
+    :paramtype model_property: ~specs.azure.example.basic.models.Model
+    :keyword array_property:
+    :paramtype array_property: list[str]
+    :keyword record_property:
+    :paramtype record_property: dict[str, str]
     """
 
     string_property: str = rest_field(name="stringProperty", visibility=["read", "create", "update", "delete", "query"])
@@ -116,6 +132,12 @@ class Model(_Model):
     :vartype float32_property: float
     :ivar enum_property: "EnumValue1"
     :vartype enum_property: str or ~specs.azure.example.basic.models.EnumEnum
+    :keyword int32_property:
+    :paramtype int32_property: int
+    :keyword float32_property:
+    :paramtype float32_property: float
+    :keyword enum_property: "EnumValue1"
+    :paramtype enum_property: str or ~specs.azure.example.basic.models.EnumEnum
     """
 
     int32_property: Optional[int] = rest_field(

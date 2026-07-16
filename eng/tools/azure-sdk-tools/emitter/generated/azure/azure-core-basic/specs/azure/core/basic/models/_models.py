@@ -26,6 +26,10 @@ class User(_Model):
     :vartype orders: list[~specs.azure.core.basic.models.UserOrder]
     :ivar etag: The entity tag for this resource. Required.
     :vartype etag: str
+    :keyword name: The user's name. Required.
+    :paramtype name: str
+    :keyword orders: The user's order list.
+    :paramtype orders: list[~specs.azure.core.basic.models.UserOrder]
     """
 
     id: int = rest_field(visibility=["read"])
@@ -61,6 +65,8 @@ class UserList(_Model):
 
     :ivar users: Required.
     :vartype users: list[~specs.azure.core.basic.models.User]
+    :keyword users: Required.
+    :paramtype users: list[~specs.azure.core.basic.models.User]
     """
 
     users: list["_models.User"] = rest_field(visibility=["read", "create", "update", "delete", "query"])
@@ -93,6 +99,10 @@ class UserOrder(_Model):
     :vartype user_id: int
     :ivar detail: The user's order detail. Required.
     :vartype detail: str
+    :keyword user_id: The user's id. Required.
+    :paramtype user_id: int
+    :keyword detail: The user's order detail. Required.
+    :paramtype detail: str
     """
 
     id: int = rest_field(visibility=["read"])

@@ -17,6 +17,8 @@ class User(_Model):
 
     :ivar name: User name. Required.
     :vartype name: str
+    :keyword name: User name. Required.
+    :paramtype name: str
     """
 
     name: str = rest_field(visibility=["read", "create", "update", "delete", "query"])

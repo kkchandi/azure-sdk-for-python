@@ -19,6 +19,10 @@ class ExportedUser(_Model):
     :vartype name: str
     :ivar resource_uri: The exported URI. Required.
     :vartype resource_uri: str
+    :keyword name: The name of user. Required.
+    :paramtype name: str
+    :keyword resource_uri: The exported URI. Required.
+    :paramtype resource_uri: str
     """
 
     name: str = rest_field(visibility=["read", "create", "update", "delete", "query"])
@@ -52,6 +56,8 @@ class User(_Model):
     :vartype name: str
     :ivar role: The role of user. Required.
     :vartype role: str
+    :keyword role: The role of user. Required.
+    :paramtype role: str
     """
 
     name: str = rest_field(visibility=["read"])

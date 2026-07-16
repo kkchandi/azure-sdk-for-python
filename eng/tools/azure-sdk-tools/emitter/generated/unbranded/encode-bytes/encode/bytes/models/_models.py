@@ -11,6 +11,8 @@ class Base64BytesProperty(_Model):
 
     :ivar value: Required.
     :vartype value: bytes
+    :keyword value: Required.
+    :paramtype value: bytes
     """
 
     value: bytes = rest_field(visibility=["read", "create", "update", "delete", "query"], format="base64")
@@ -39,6 +41,8 @@ class Base64urlArrayBytesProperty(_Model):
 
     :ivar value: Required.
     :vartype value: list[bytes]
+    :keyword value: Required.
+    :paramtype value: list[bytes]
     """
 
     value: list[bytes] = rest_field(visibility=["read", "create", "update", "delete", "query"], format="base64url")
@@ -67,6 +71,8 @@ class Base64urlBytesProperty(_Model):
 
     :ivar value: Required.
     :vartype value: bytes
+    :keyword value: Required.
+    :paramtype value: bytes
     """
 
     value: bytes = rest_field(visibility=["read", "create", "update", "delete", "query"], format="base64url")
@@ -95,6 +101,8 @@ class DefaultBytesProperty(_Model):
 
     :ivar value: Required.
     :vartype value: bytes
+    :keyword value: Required.
+    :paramtype value: bytes
     """
 
     value: bytes = rest_field(visibility=["read", "create", "update", "delete", "query"], format="base64")

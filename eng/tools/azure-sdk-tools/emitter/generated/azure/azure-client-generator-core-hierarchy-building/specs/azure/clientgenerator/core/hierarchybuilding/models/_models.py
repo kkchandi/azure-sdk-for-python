@@ -23,6 +23,10 @@ class Animal(_Model):
     :vartype kind: str
     :ivar name: Name of the animal. Required.
     :vartype name: str
+    :keyword kind: The kind of animal. Required. Default value is None.
+    :paramtype kind: str
+    :keyword name: Name of the animal. Required.
+    :paramtype name: str
     """
 
     __mapping__: dict[str, _Model] = {}
@@ -62,6 +66,10 @@ class Pet(Animal, discriminator="pet"):
     :vartype kind: str
     :ivar trained: Whether the pet is trained. Required.
     :vartype trained: bool
+    :keyword name: Name of the animal. Required.
+    :paramtype name: str
+    :keyword trained: Whether the pet is trained. Required.
+    :paramtype trained: bool
     """
 
     __mapping__: dict[str, _Model] = {}
@@ -101,6 +109,12 @@ class Dog(Pet, discriminator="dog"):
     :vartype kind: str
     :ivar breed: The breed of the dog. Required.
     :vartype breed: str
+    :keyword name: Name of the animal. Required.
+    :paramtype name: str
+    :keyword trained: Whether the pet is trained. Required.
+    :paramtype trained: bool
+    :keyword breed: The breed of the dog. Required.
+    :paramtype breed: str
     """
 
     kind: Literal["dog"] = rest_discriminator(name="kind", visibility=["read", "create", "update", "delete", "query"])  # type: ignore

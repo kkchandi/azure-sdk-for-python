@@ -67,6 +67,8 @@ class ErrorResponse(_Model):
 
     :ivar error: The error object.
     :vartype error: ~azure.resourcemanager.methodsubscriptionid.models.ErrorDetail
+    :keyword error: The error object.
+    :paramtype error: ~azure.resourcemanager.methodsubscriptionid.models.ErrorDetail
     """
 
     error: Optional["_models.ErrorDetail"] = rest_field(visibility=["read", "create", "update", "delete", "query"])
@@ -108,6 +110,8 @@ class Operation(_Model):
     :ivar action_type: Extensible enum. Indicates the action type. "Internal" refers to actions
      that are for internal only APIs. "Internal"
     :vartype action_type: str or ~azure.resourcemanager.methodsubscriptionid.models.ActionType
+    :keyword display: Localized display information for this particular operation.
+    :paramtype display: ~azure.resourcemanager.methodsubscriptionid.models.OperationDisplay
     """
 
     name: Optional[str] = rest_field(visibility=["read"])
@@ -241,6 +245,10 @@ class TrackedResource(Resource):
     :vartype tags: dict[str, str]
     :ivar location: The geo-location where the resource lives. Required.
     :vartype location: str
+    :keyword location: The geo-location where the resource lives. Required.
+    :paramtype location: str
+    :keyword tags: Resource tags.
+    :paramtype tags: dict[str, str]
     """
 
     tags: Optional[dict[str, str]] = rest_field(visibility=["read", "create", "update", "delete", "query"])
@@ -289,6 +297,13 @@ class ResourceGroupResource(TrackedResource):
     :ivar properties: The resource-specific properties for this resource.
     :vartype properties:
      ~azure.resourcemanager.methodsubscriptionid.models.ResourceGroupResourceProperties
+    :keyword location: The geo-location where the resource lives. Required.
+    :paramtype location: str
+    :keyword tags: Resource tags.
+    :paramtype tags: dict[str, str]
+    :keyword properties: The resource-specific properties for this resource.
+    :paramtype properties:
+     ~azure.resourcemanager.methodsubscriptionid.models.ResourceGroupResourceProperties
     """
 
     properties: Optional["_models.ResourceGroupResourceProperties"] = rest_field(
@@ -325,6 +340,8 @@ class ResourceGroupResourceProperties(_Model):
      ~azure.resourcemanager.methodsubscriptionid.models.ResourceProvisioningState
     :ivar resource_group_setting: The resource group-scoped setting.
     :vartype resource_group_setting: str
+    :keyword resource_group_setting: The resource group-scoped setting.
+    :paramtype resource_group_setting: str
     """
 
     provisioning_state: Optional[Union[str, "_models.ResourceProvisioningState"]] = rest_field(
@@ -373,6 +390,9 @@ class SubscriptionResource(ProxyResource):
     :ivar properties: The resource-specific properties for this resource.
     :vartype properties:
      ~azure.resourcemanager.methodsubscriptionid.models.SubscriptionResourceProperties
+    :keyword properties: The resource-specific properties for this resource.
+    :paramtype properties:
+     ~azure.resourcemanager.methodsubscriptionid.models.SubscriptionResourceProperties
     """
 
     properties: Optional["_models.SubscriptionResourceProperties"] = rest_field(
@@ -416,6 +436,9 @@ class SubscriptionResource1(ProxyResource):
     :ivar properties: The resource-specific properties for this resource.
     :vartype properties:
      ~azure.resourcemanager.methodsubscriptionid.models.SubscriptionResource1Properties
+    :keyword properties: The resource-specific properties for this resource.
+    :paramtype properties:
+     ~azure.resourcemanager.methodsubscriptionid.models.SubscriptionResource1Properties
     """
 
     properties: Optional["_models.SubscriptionResource1Properties"] = rest_field(
@@ -450,6 +473,8 @@ class SubscriptionResource1Properties(_Model):
      ~azure.resourcemanager.methodsubscriptionid.models.ResourceProvisioningState
     :ivar description: The description of the resource.
     :vartype description: str
+    :keyword description: The description of the resource.
+    :paramtype description: str
     """
 
     provisioning_state: Optional[Union[str, "_models.ResourceProvisioningState"]] = rest_field(
@@ -496,6 +521,9 @@ class SubscriptionResource2(ProxyResource):
     :ivar properties: The resource-specific properties for this resource.
     :vartype properties:
      ~azure.resourcemanager.methodsubscriptionid.models.SubscriptionResource2Properties
+    :keyword properties: The resource-specific properties for this resource.
+    :paramtype properties:
+     ~azure.resourcemanager.methodsubscriptionid.models.SubscriptionResource2Properties
     """
 
     properties: Optional["_models.SubscriptionResource2Properties"] = rest_field(
@@ -530,6 +558,8 @@ class SubscriptionResource2Properties(_Model):
      ~azure.resourcemanager.methodsubscriptionid.models.ResourceProvisioningState
     :ivar config_value: The configuration value.
     :vartype config_value: str
+    :keyword config_value: The configuration value.
+    :paramtype config_value: str
     """
 
     provisioning_state: Optional[Union[str, "_models.ResourceProvisioningState"]] = rest_field(
@@ -569,6 +599,8 @@ class SubscriptionResourceProperties(_Model):
      ~azure.resourcemanager.methodsubscriptionid.models.ResourceProvisioningState
     :ivar subscription_setting: The subscription-scoped setting.
     :vartype subscription_setting: str
+    :keyword subscription_setting: The subscription-scoped setting.
+    :paramtype subscription_setting: str
     """
 
     provisioning_state: Optional[Union[str, "_models.ResourceProvisioningState"]] = rest_field(
@@ -618,6 +650,22 @@ class SystemData(_Model):
      ~azure.resourcemanager.methodsubscriptionid.models.CreatedByType
     :ivar last_modified_at: The timestamp of resource last modification (UTC).
     :vartype last_modified_at: ~datetime.datetime
+    :keyword created_by: The identity that created the resource.
+    :paramtype created_by: str
+    :keyword created_by_type: The type of identity that created the resource. Known values are:
+     "User", "Application", "ManagedIdentity", and "Key".
+    :paramtype created_by_type: str or
+     ~azure.resourcemanager.methodsubscriptionid.models.CreatedByType
+    :keyword created_at: The timestamp of resource creation (UTC).
+    :paramtype created_at: ~datetime.datetime
+    :keyword last_modified_by: The identity that last modified the resource.
+    :paramtype last_modified_by: str
+    :keyword last_modified_by_type: The type of identity that last modified the resource. Known
+     values are: "User", "Application", "ManagedIdentity", and "Key".
+    :paramtype last_modified_by_type: str or
+     ~azure.resourcemanager.methodsubscriptionid.models.CreatedByType
+    :keyword last_modified_at: The timestamp of resource last modification (UTC).
+    :paramtype last_modified_at: ~datetime.datetime
     """
 
     created_by: Optional[str] = rest_field(name="createdBy", visibility=["read", "create", "update", "delete", "query"])

@@ -14,6 +14,8 @@ class Cat(_Model):
 
     :ivar name: Required.
     :vartype name: str
+    :keyword name: Required.
+    :paramtype name: str
     """
 
     name: str = rest_field(visibility=["read", "create", "update", "delete", "query"])
@@ -42,6 +44,8 @@ class Dog(_Model):
 
     :ivar bark: Required.
     :vartype bark: str
+    :keyword bark: Required.
+    :paramtype bark: str
     """
 
     bark: str = rest_field(visibility=["read", "create", "update", "delete", "query"])
@@ -74,6 +78,12 @@ class EnumsOnlyCases(_Model):
     :ivar ud: This should be receive/send the up variant. Required. Is either a Literal["up"] type
      or a Literal["down"] type.
     :vartype ud: str or str
+    :keyword lr: This should be receive/send the left variant. Required. Is one of the following
+     types: Literal["left"], Literal["right"], Literal["up"], Literal["down"]
+    :paramtype lr: str or str or str or str
+    :keyword ud: This should be receive/send the up variant. Required. Is either a Literal["up"]
+     type or a Literal["down"] type.
+    :paramtype ud: str or str
     """
 
     lr: Literal["left", "right", "up", "down"] = rest_field(visibility=["read", "create", "update", "delete", "query"])
@@ -107,6 +117,9 @@ class GetResponse(_Model):
 
     :ivar prop: Required. Is one of the following types: Literal["a"], Literal["b"], Literal["c"]
     :vartype prop: str or str or str
+    :keyword prop: Required. Is one of the following types: Literal["a"], Literal["b"],
+     Literal["c"]
+    :paramtype prop: str or str or str
     """
 
     prop: Literal["a", "b", "c"] = rest_field(visibility=["read", "create", "update", "delete", "query"])
@@ -135,6 +148,8 @@ class GetResponse1(_Model):
 
     :ivar prop: Required. Is one of the following types: Literal["b"], Literal["c"], str
     :vartype prop: str or str or str
+    :keyword prop: Required. Is one of the following types: Literal["b"], Literal["c"], str
+    :paramtype prop: str or str or str
     """
 
     prop: Union[Literal["b"], Literal["c"], str] = rest_field(
@@ -165,6 +180,8 @@ class GetResponse2(_Model):
 
     :ivar prop: Required. Known values are: "b" and "c".
     :vartype prop: str or ~typetest.union.models.StringExtensibleNamedUnion
+    :keyword prop: Required. Known values are: "b" and "c".
+    :paramtype prop: str or ~typetest.union.models.StringExtensibleNamedUnion
     """
 
     prop: Union[str, "_models.StringExtensibleNamedUnion"] = rest_field(
@@ -195,6 +212,8 @@ class GetResponse3(_Model):
 
     :ivar prop: Required. Is one of the following types: Literal[1], Literal[2], Literal[3]
     :vartype prop: int or int or int
+    :keyword prop: Required. Is one of the following types: Literal[1], Literal[2], Literal[3]
+    :paramtype prop: int or int or int
     """
 
     prop: Literal[1, 2, 3] = rest_field(visibility=["read", "create", "update", "delete", "query"])
@@ -223,6 +242,8 @@ class GetResponse4(_Model):
 
     :ivar prop: Required. Is one of the following types: float
     :vartype prop: float or float or float
+    :keyword prop: Required. Is one of the following types: float
+    :paramtype prop: float or float or float
     """
 
     prop: float = rest_field(visibility=["read", "create", "update", "delete", "query"])
@@ -251,6 +272,8 @@ class GetResponse5(_Model):
 
     :ivar prop: Required. Is either a Cat type or a Dog type.
     :vartype prop: ~typetest.union.models.Cat or ~typetest.union.models.Dog
+    :keyword prop: Required. Is either a Cat type or a Dog type.
+    :paramtype prop: ~typetest.union.models.Cat or ~typetest.union.models.Dog
     """
 
     prop: Union["_models.Cat", "_models.Dog"] = rest_field(visibility=["read", "create", "update", "delete", "query"])
@@ -279,6 +302,8 @@ class GetResponse6(_Model):
 
     :ivar prop: Required.
     :vartype prop: ~typetest.union.models.EnumsOnlyCases
+    :keyword prop: Required.
+    :paramtype prop: ~typetest.union.models.EnumsOnlyCases
     """
 
     prop: "_models.EnumsOnlyCases" = rest_field(visibility=["read", "create", "update", "delete", "query"])
@@ -307,6 +332,8 @@ class GetResponse7(_Model):
 
     :ivar prop: Required.
     :vartype prop: ~typetest.union.models.StringAndArrayCases
+    :keyword prop: Required.
+    :paramtype prop: ~typetest.union.models.StringAndArrayCases
     """
 
     prop: "_models.StringAndArrayCases" = rest_field(visibility=["read", "create", "update", "delete", "query"])
@@ -335,6 +362,8 @@ class GetResponse8(_Model):
 
     :ivar prop: Required.
     :vartype prop: ~typetest.union.models.MixedLiteralsCases
+    :keyword prop: Required.
+    :paramtype prop: ~typetest.union.models.MixedLiteralsCases
     """
 
     prop: "_models.MixedLiteralsCases" = rest_field(visibility=["read", "create", "update", "delete", "query"])
@@ -363,6 +392,8 @@ class GetResponse9(_Model):
 
     :ivar prop: Required.
     :vartype prop: ~typetest.union.models.MixedTypesCases
+    :keyword prop: Required.
+    :paramtype prop: ~typetest.union.models.MixedTypesCases
     """
 
     prop: "_models.MixedTypesCases" = rest_field(visibility=["read", "create", "update", "delete", "query"])
@@ -401,6 +432,18 @@ class MixedLiteralsCases(_Model):
     :ivar boolean_literal: This should be receive/send the true variant. Required. Is one of the
      following types: Literal["a"], Literal[2], float, Literal[True]
     :vartype boolean_literal: str or int or float or bool
+    :keyword string_literal: This should be receive/send the "a" variant. Required. Is one of the
+     following types: Literal["a"], Literal[2], float, Literal[True]
+    :paramtype string_literal: str or int or float or bool
+    :keyword int_literal: This should be receive/send the 2 variant. Required. Is one of the
+     following types: Literal["a"], Literal[2], float, Literal[True]
+    :paramtype int_literal: str or int or float or bool
+    :keyword float_literal: This should be receive/send the 3.3 variant. Required. Is one of the
+     following types: Literal["a"], Literal[2], float, Literal[True]
+    :paramtype float_literal: str or int or float or bool
+    :keyword boolean_literal: This should be receive/send the true variant. Required. Is one of the
+     following types: Literal["a"], Literal[2], float, Literal[True]
+    :paramtype boolean_literal: str or int or float or bool
     """
 
     string_literal: Literal["a", 2, True] = rest_field(
@@ -462,6 +505,21 @@ class MixedTypesCases(_Model):
     :vartype boolean: ~typetest.union.models.Cat or str or int or bool
     :ivar array: This should be receive/send 4 element with Cat, "a", int, and boolean. Required.
     :vartype array: list[~typetest.union.models.Cat or str or int or bool]
+    :keyword model: This should be receive/send the Cat variant. Required. Is one of the following
+     types: Cat, Literal["a"], int, bool
+    :paramtype model: ~typetest.union.models.Cat or str or int or bool
+    :keyword literal: This should be receive/send the "a" variant. Required. Is one of the
+     following types: Cat, Literal["a"], int, bool
+    :paramtype literal: ~typetest.union.models.Cat or str or int or bool
+    :keyword int_property: This should be receive/send the int variant. Required. Is one of the
+     following types: Cat, Literal["a"], int, bool
+    :paramtype int_property: ~typetest.union.models.Cat or str or int or bool
+    :keyword boolean: This should be receive/send the boolean variant. Required. Is one of the
+     following types: Cat, Literal["a"], int, bool
+    :paramtype boolean: ~typetest.union.models.Cat or str or int or bool
+    :keyword array: This should be receive/send 4 element with Cat, "a", int, and boolean.
+     Required.
+    :paramtype array: list[~typetest.union.models.Cat or str or int or bool]
     """
 
     model: Union["_models.Cat", Literal["a"], int, bool] = rest_field(
@@ -520,6 +578,12 @@ class StringAndArrayCases(_Model):
     :ivar array: This should be receive/send the array variant. Required. Is either a str type or a
      [str] type.
     :vartype array: str or list[str]
+    :keyword string: This should be receive/send the string variant. Required. Is either a str type
+     or a [str] type.
+    :paramtype string: str or list[str]
+    :keyword array: This should be receive/send the array variant. Required. Is either a str type
+     or a [str] type.
+    :paramtype array: str or list[str]
     """
 
     string: Union[str, list[str]] = rest_field(visibility=["read", "create", "update", "delete", "query"])

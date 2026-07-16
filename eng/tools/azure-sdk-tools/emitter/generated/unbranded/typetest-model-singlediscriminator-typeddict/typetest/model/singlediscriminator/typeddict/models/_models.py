@@ -20,6 +20,10 @@ class Bird(_Model):
     :vartype kind: str
     :ivar wingspan: Required.
     :vartype wingspan: int
+    :keyword kind: Required. Default value is None.
+    :paramtype kind: str
+    :keyword wingspan: Required.
+    :paramtype wingspan: int
     """
 
     __mapping__: dict[str, _Model] = {}
@@ -58,6 +62,10 @@ class Dinosaur(_Model):
     :vartype kind: str
     :ivar size: Required.
     :vartype size: int
+    :keyword kind: Discriminator property for Dinosaur. Required. Default value is None.
+    :paramtype kind: str
+    :keyword size: Required.
+    :paramtype size: int
     """
 
     __mapping__: dict[str, _Model] = {}
@@ -99,6 +107,14 @@ class Eagle(Bird, discriminator="eagle"):
     :vartype hate: dict[str, ~typetest.model.singlediscriminator.typeddict.models.Bird]
     :ivar partner:
     :vartype partner: ~typetest.model.singlediscriminator.typeddict.models.Bird
+    :keyword wingspan: Required.
+    :paramtype wingspan: int
+    :keyword friends:
+    :paramtype friends: list[~typetest.model.singlediscriminator.typeddict.models.Bird]
+    :keyword hate:
+    :paramtype hate: dict[str, ~typetest.model.singlediscriminator.typeddict.models.Bird]
+    :keyword partner:
+    :paramtype partner: ~typetest.model.singlediscriminator.typeddict.models.Bird
     """
 
     kind: Literal["eagle"] = rest_discriminator(name="kind", visibility=["read", "create", "update", "delete", "query"])  # type: ignore
@@ -137,6 +153,8 @@ class Fish(_Model):
     :vartype kind: str
     :ivar size: Required.
     :vartype size: int
+    :keyword size: Required.
+    :paramtype size: int
     """
 
     kind: str = rest_discriminator(name="kind", visibility=["read", "create", "update", "delete", "query"])
@@ -169,6 +187,8 @@ class Goose(Bird, discriminator="goose"):
     :vartype wingspan: int
     :ivar kind: Required. Default value is "goose".
     :vartype kind: str
+    :keyword wingspan: Required.
+    :paramtype wingspan: int
     """
 
     kind: Literal["goose"] = rest_discriminator(name="kind", visibility=["read", "create", "update", "delete", "query"])  # type: ignore
@@ -200,6 +220,8 @@ class SeaGull(Bird, discriminator="seagull"):
     :vartype wingspan: int
     :ivar kind: Required. Default value is "seagull".
     :vartype kind: str
+    :keyword wingspan: Required.
+    :paramtype wingspan: int
     """
 
     kind: Literal["seagull"] = rest_discriminator(name="kind", visibility=["read", "create", "update", "delete", "query"])  # type: ignore
@@ -231,6 +253,8 @@ class Sparrow(Bird, discriminator="sparrow"):
     :vartype wingspan: int
     :ivar kind: Required. Default value is "sparrow".
     :vartype kind: str
+    :keyword wingspan: Required.
+    :paramtype wingspan: int
     """
 
     kind: Literal["sparrow"] = rest_discriminator(name="kind", visibility=["read", "create", "update", "delete", "query"])  # type: ignore
@@ -262,6 +286,8 @@ class TRex(Dinosaur, discriminator="t-rex"):
     :vartype size: int
     :ivar kind: Required. Default value is "t-rex".
     :vartype kind: str
+    :keyword size: Required.
+    :paramtype size: int
     """
 
     kind: Literal["t-rex"] = rest_discriminator(name="kind", visibility=["read", "create", "update", "delete", "query"])  # type: ignore

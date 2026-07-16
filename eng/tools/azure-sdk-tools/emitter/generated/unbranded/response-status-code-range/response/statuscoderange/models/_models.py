@@ -11,6 +11,8 @@ class DefaultError(_Model):
 
     :ivar code: Required.
     :vartype code: str
+    :keyword code: Required.
+    :paramtype code: str
     """
 
     code: str = rest_field(visibility=["read", "create", "update", "delete", "query"])
@@ -41,6 +43,10 @@ class ErrorInRange(_Model):
     :vartype code: str
     :ivar message: Required.
     :vartype message: str
+    :keyword code: Required.
+    :paramtype code: str
+    :keyword message: Required.
+    :paramtype message: str
     """
 
     code: str = rest_field(visibility=["read", "create", "update", "delete", "query"])
@@ -74,6 +80,10 @@ class NotFoundError(_Model):
     :vartype code: str
     :ivar resource_id: Required.
     :vartype resource_id: str
+    :keyword code: Required.
+    :paramtype code: str
+    :keyword resource_id: Required.
+    :paramtype resource_id: str
     """
 
     code: str = rest_field(visibility=["read", "create", "update", "delete", "query"])
@@ -105,6 +115,8 @@ class Standard4XXError(_Model):
 
     :ivar code: Required.
     :vartype code: str
+    :keyword code: Required.
+    :paramtype code: str
     """
 
     code: str = rest_field(visibility=["read", "create", "update", "delete", "query"])

@@ -27,6 +27,8 @@ class Author(_Model):
 
     :ivar name: Required.
     :vartype name: str
+    :keyword name: Required.
+    :paramtype name: str
     """
 
     name: str = rest_field(
@@ -61,6 +63,8 @@ class Book(_Model):
 
     :ivar title: Required.
     :vartype title: str
+    :keyword title: Required.
+    :paramtype title: str
     """
 
     title: str = rest_field(
@@ -95,6 +99,8 @@ class ModelWithArrayOfModel(_Model):
 
     :ivar items_property: Required.
     :vartype items_property: ~payload.xml.models.SimpleModel
+    :keyword items_property: Required.
+    :paramtype items_property: ~payload.xml.models.SimpleModel
     """
 
     items_property: list["_models.SimpleModel"] = rest_field(
@@ -134,6 +140,12 @@ class ModelWithAttributes(_Model):
     :vartype id2: str
     :ivar enabled: Required.
     :vartype enabled: bool
+    :keyword id1: Required.
+    :paramtype id1: int
+    :keyword id2: Required.
+    :paramtype id2: str
+    :keyword enabled: Required.
+    :paramtype enabled: bool
     """
 
     id1: int = rest_field(
@@ -184,6 +196,10 @@ class ModelWithDatetime(_Model):
     :vartype rfc3339: ~datetime.datetime
     :ivar rfc7231: DateTime value with rfc7231 encoding. Required.
     :vartype rfc7231: ~datetime.datetime
+    :keyword rfc3339: DateTime value with rfc3339 encoding. Required.
+    :paramtype rfc3339: ~datetime.datetime
+    :keyword rfc7231: DateTime value with rfc7231 encoding. Required.
+    :paramtype rfc7231: ~datetime.datetime
     """
 
     rfc3339: datetime.datetime = rest_field(
@@ -227,6 +243,8 @@ class ModelWithDictionary(_Model):
 
     :ivar metadata: Required.
     :vartype metadata: dict[str, str]
+    :keyword metadata: Required.
+    :paramtype metadata: dict[str, str]
     """
 
     metadata: dict[str, str] = rest_field(
@@ -260,6 +278,8 @@ class ModelWithEmptyArray(_Model):
 
     :ivar items_property: Required.
     :vartype items_property: ~payload.xml.models.SimpleModel
+    :keyword items_property: Required.
+    :paramtype items_property: ~payload.xml.models.SimpleModel
     """
 
     items_property: list["_models.SimpleModel"] = rest_field(
@@ -297,6 +317,10 @@ class ModelWithEncodedNames(_Model):
     :vartype model_data: ~payload.xml.models.SimpleModel
     :ivar colors: Required.
     :vartype colors: list[str]
+    :keyword model_data: Required.
+    :paramtype model_data: ~payload.xml.models.SimpleModel
+    :keyword colors: Required.
+    :paramtype colors: list[str]
     """
 
     model_data: "_models.SimpleModel" = rest_field(
@@ -337,6 +361,8 @@ class ModelWithEnum(_Model):
 
     :ivar status: Required. Known values are: "pending", "success", and "error".
     :vartype status: str or ~payload.xml.models.Status
+    :keyword status: Required. Known values are: "pending", "success", and "error".
+    :paramtype status: str or ~payload.xml.models.Status
     """
 
     status: Union[str, "_models.Status"] = rest_field(
@@ -373,6 +399,10 @@ class ModelWithNamespace(_Model):
     :vartype id: int
     :ivar title: Required.
     :vartype title: str
+    :keyword id: Required.
+    :paramtype id: int
+    :keyword title: Required.
+    :paramtype title: str
     """
 
     id: int = rest_field(
@@ -425,6 +455,12 @@ class ModelWithNamespaceOnProperties(_Model):
     :vartype title: str
     :ivar author: Required.
     :vartype author: str
+    :keyword id: Required.
+    :paramtype id: int
+    :keyword title: Required.
+    :paramtype title: str
+    :keyword author: Required.
+    :paramtype author: str
     """
 
     id: int = rest_field(
@@ -494,6 +530,8 @@ class ModelWithNestedModel(_Model):
 
     :ivar nested: Required.
     :vartype nested: ~payload.xml.models.SimpleModel
+    :keyword nested: Required.
+    :paramtype nested: ~payload.xml.models.SimpleModel
     """
 
     nested: "_models.SimpleModel" = rest_field(
@@ -529,6 +567,10 @@ class ModelWithOptionalField(_Model):
     :vartype item: str
     :ivar value:
     :vartype value: int
+    :keyword item: Required.
+    :paramtype item: str
+    :keyword value:
+    :paramtype value: int
     """
 
     item: str = rest_field(
@@ -572,6 +614,10 @@ class ModelWithRenamedArrays(_Model):
     :vartype colors: list[str]
     :ivar counts: Required.
     :vartype counts: list[int]
+    :keyword colors: Required.
+    :paramtype colors: list[str]
+    :keyword counts: Required.
+    :paramtype counts: list[int]
     """
 
     colors: list[str] = rest_field(
@@ -615,6 +661,12 @@ class ModelWithRenamedAttribute(_Model):
     :vartype title: str
     :ivar author: Required.
     :vartype author: str
+    :keyword id: Required.
+    :paramtype id: int
+    :keyword title: Required.
+    :paramtype title: str
+    :keyword author: Required.
+    :paramtype author: str
     """
 
     id: int = rest_field(
@@ -665,6 +717,10 @@ class ModelWithRenamedFields(_Model):
     :vartype input_data: ~payload.xml.models.SimpleModel
     :ivar output_data: Required.
     :vartype output_data: ~payload.xml.models.SimpleModel
+    :keyword input_data: Required.
+    :paramtype input_data: ~payload.xml.models.SimpleModel
+    :keyword output_data: Required.
+    :paramtype output_data: ~payload.xml.models.SimpleModel
     """
 
     input_data: "_models.SimpleModel" = rest_field(
@@ -706,6 +762,8 @@ class ModelWithRenamedNestedModel(_Model):
 
     :ivar author: Required.
     :vartype author: ~payload.xml.models.Author
+    :keyword author: Required.
+    :paramtype author: ~payload.xml.models.Author
     """
 
     author: "_models.Author" = rest_field(
@@ -741,6 +799,10 @@ class ModelWithRenamedProperty(_Model):
     :vartype title: str
     :ivar author: Required.
     :vartype author: str
+    :keyword title: Required.
+    :paramtype title: str
+    :keyword author: Required.
+    :paramtype author: str
     """
 
     title: str = rest_field(
@@ -782,6 +844,8 @@ class ModelWithRenamedUnwrappedModelArray(_Model):
 
     :ivar items_property: Required.
     :vartype items_property: ~payload.xml.models.SimpleModel
+    :keyword items_property: Required.
+    :paramtype items_property: ~payload.xml.models.SimpleModel
     """
 
     items_property: list["_models.SimpleModel"] = rest_field(
@@ -817,6 +881,8 @@ class ModelWithRenamedWrappedAndItemModelArray(_Model):
 
     :ivar books: Required.
     :vartype books: ~payload.xml.models.Book
+    :keyword books: Required.
+    :paramtype books: ~payload.xml.models.Book
     """
 
     books: list["_models.Book"] = rest_field(
@@ -850,6 +916,8 @@ class ModelWithRenamedWrappedModelArray(_Model):
 
     :ivar items_property: Required.
     :vartype items_property: ~payload.xml.models.SimpleModel
+    :keyword items_property: Required.
+    :paramtype items_property: ~payload.xml.models.SimpleModel
     """
 
     items_property: list["_models.SimpleModel"] = rest_field(
@@ -887,6 +955,10 @@ class ModelWithSimpleArrays(_Model):
     :vartype colors: list[str]
     :ivar counts: Required.
     :vartype counts: list[int]
+    :keyword colors: Required.
+    :paramtype colors: list[str]
+    :keyword counts: Required.
+    :paramtype counts: list[int]
     """
 
     colors: list[str] = rest_field(
@@ -928,6 +1000,10 @@ class ModelWithText(_Model):
     :vartype language: str
     :ivar content: Required.
     :vartype content: str
+    :keyword language: Required.
+    :paramtype language: str
+    :keyword content: Required.
+    :paramtype content: str
     """
 
     language: str = rest_field(
@@ -971,6 +1047,10 @@ class ModelWithUnwrappedArray(_Model):
     :vartype colors: list[str]
     :ivar counts: Required.
     :vartype counts: list[int]
+    :keyword colors: Required.
+    :paramtype colors: list[str]
+    :keyword counts: Required.
+    :paramtype counts: list[int]
     """
 
     colors: list[str] = rest_field(
@@ -1010,6 +1090,8 @@ class ModelWithUnwrappedModelArray(_Model):
 
     :ivar items_property: Required.
     :vartype items_property: ~payload.xml.models.SimpleModel
+    :keyword items_property: Required.
+    :paramtype items_property: ~payload.xml.models.SimpleModel
     """
 
     items_property: list["_models.SimpleModel"] = rest_field(
@@ -1045,6 +1127,8 @@ class ModelWithWrappedPrimitiveCustomItemNames(_Model):
 
     :ivar tags: Required.
     :vartype tags: list[str]
+    :keyword tags: Required.
+    :paramtype tags: list[str]
     """
 
     tags: list[str] = rest_field(
@@ -1080,6 +1164,10 @@ class SimpleModel(_Model):
     :vartype name: str
     :ivar age: Required.
     :vartype age: int
+    :keyword name: Required.
+    :paramtype name: str
+    :keyword age: Required.
+    :paramtype age: int
     """
 
     name: str = rest_field(
@@ -1123,6 +1211,10 @@ class XmlErrorBody(_Model):
     :vartype message: str
     :ivar code: Required.
     :vartype code: int
+    :keyword message: Required.
+    :paramtype message: str
+    :keyword code: Required.
+    :paramtype code: int
     """
 
     message: str = rest_field(

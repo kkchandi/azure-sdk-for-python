@@ -17,6 +17,8 @@ class ResponseModel(_Model):
 
     :ivar sample_url: Required.
     :vartype sample_url: str
+    :keyword sample_url: Required.
+    :paramtype sample_url: str
     """
 
     sample_url: str = rest_field(name="sampleUrl", visibility=["read", "create", "update", "delete", "query"])

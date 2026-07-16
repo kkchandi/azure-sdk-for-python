@@ -30,6 +30,16 @@ class ApiError(_Model):
     :vartype target: str
     :ivar message: The error message.
     :vartype message: str
+    :keyword details: The Api error details.
+    :paramtype details: list[~azure.resourcemanager.commonproperties.models.ApiErrorBase]
+    :keyword innererror: The Api inner error.
+    :paramtype innererror: ~azure.resourcemanager.commonproperties.models.InnerError
+    :keyword code: The error code.
+    :paramtype code: str
+    :keyword target: The target of the particular error.
+    :paramtype target: str
+    :keyword message: The error message.
+    :paramtype message: str
     """
 
     details: Optional[list["_models.ApiErrorBase"]] = rest_field(
@@ -76,6 +86,12 @@ class ApiErrorBase(_Model):
     :vartype target: str
     :ivar message: The error message.
     :vartype message: str
+    :keyword code: The error code.
+    :paramtype code: str
+    :keyword target: The target of the particular error.
+    :paramtype target: str
+    :keyword message: The error message.
+    :paramtype message: str
     """
 
     code: Optional[str] = rest_field(visibility=["read", "create", "update", "delete", "query"])
@@ -151,6 +167,10 @@ class TrackedResource(Resource):
     :vartype tags: dict[str, str]
     :ivar location: The geo-location where the resource lives. Required.
     :vartype location: str
+    :keyword location: The geo-location where the resource lives. Required.
+    :paramtype location: str
+    :keyword tags: Resource tags.
+    :paramtype tags: dict[str, str]
     """
 
     tags: Optional[dict[str, str]] = rest_field(visibility=["read", "create", "update", "delete", "query"])
@@ -199,6 +219,13 @@ class ArmResourceIdentifierResource(TrackedResource):
     :ivar properties: The resource-specific properties for this resource.
     :vartype properties:
      ~azure.resourcemanager.commonproperties.models.ArmResourceIdentifierResourceProperties
+    :keyword location: The geo-location where the resource lives. Required.
+    :paramtype location: str
+    :keyword tags: Resource tags.
+    :paramtype tags: dict[str, str]
+    :keyword properties: The resource-specific properties for this resource.
+    :paramtype properties:
+     ~azure.resourcemanager.commonproperties.models.ArmResourceIdentifierResourceProperties
     """
 
     properties: Optional["_models.ArmResourceIdentifierResourceProperties"] = rest_field(
@@ -241,6 +268,14 @@ class ArmResourceIdentifierResourceProperties(_Model):
     :vartype arm_id_with_type_and_scope: str
     :ivar arm_id_with_all_scopes: An ARM resource identifier with all scopes. Required.
     :vartype arm_id_with_all_scopes: str
+    :keyword simple_arm_id: A basic ARM resource identifier without type or scopes. Required.
+    :paramtype simple_arm_id: str
+    :keyword arm_id_with_type: An ARM resource identifier with type only. Required.
+    :paramtype arm_id_with_type: str
+    :keyword arm_id_with_type_and_scope: An ARM resource identifier with type and scopes. Required.
+    :paramtype arm_id_with_type_and_scope: str
+    :keyword arm_id_with_all_scopes: An ARM resource identifier with all scopes. Required.
+    :paramtype arm_id_with_all_scopes: str
     """
 
     provisioning_state: Union[str, "_models.ResourceProvisioningState"] = rest_field(
@@ -287,6 +322,8 @@ class CloudError(_Model):
 
     :ivar error: Api error.
     :vartype error: ~azure.resourcemanager.commonproperties.models.ApiError
+    :keyword error: Api error.
+    :paramtype error: ~azure.resourcemanager.commonproperties.models.ApiError
     """
 
     error: Optional["_models.ApiError"] = rest_field(visibility=["read", "create", "update", "delete", "query"])
@@ -332,6 +369,13 @@ class ConfidentialResource(TrackedResource):
     :ivar properties: The resource-specific properties for this resource.
     :vartype properties:
      ~azure.resourcemanager.commonproperties.models.ConfidentialResourceProperties
+    :keyword location: The geo-location where the resource lives. Required.
+    :paramtype location: str
+    :keyword tags: Resource tags.
+    :paramtype tags: dict[str, str]
+    :keyword properties: The resource-specific properties for this resource.
+    :paramtype properties:
+     ~azure.resourcemanager.commonproperties.models.ConfidentialResourceProperties
     """
 
     properties: Optional["_models.ConfidentialResourceProperties"] = rest_field(
@@ -366,6 +410,8 @@ class ConfidentialResourceProperties(_Model):
     :vartype provisioning_state: str
     :ivar username: Required.
     :vartype username: str
+    :keyword username: Required.
+    :paramtype username: str
     """
 
     provisioning_state: str = rest_field(name="provisioningState", visibility=["read"])
@@ -441,6 +487,8 @@ class ErrorResponse(_Model):
 
     :ivar error: The error object.
     :vartype error: ~azure.resourcemanager.commonproperties.models.ErrorDetail
+    :keyword error: The error object.
+    :paramtype error: ~azure.resourcemanager.commonproperties.models.ErrorDetail
     """
 
     error: Optional["_models.ErrorDetail"] = rest_field(visibility=["read", "create", "update", "delete", "query"])
@@ -471,6 +519,10 @@ class InnerError(_Model):
     :vartype exceptiontype: str
     :ivar errordetail: The internal error message or exception dump.
     :vartype errordetail: str
+    :keyword exceptiontype: The exception type.
+    :paramtype exceptiontype: str
+    :keyword errordetail: The internal error message or exception dump.
+    :paramtype errordetail: str
     """
 
     exceptiontype: Optional[str] = rest_field(visibility=["read", "create", "update", "delete", "query"])
@@ -521,6 +573,15 @@ class ManagedIdentityTrackedResource(TrackedResource):
      ~azure.resourcemanager.commonproperties.models.ManagedIdentityTrackedResourceProperties
     :ivar identity: The managed service identities assigned to this resource.
     :vartype identity: ~azure.resourcemanager.commonproperties.models.ManagedServiceIdentity
+    :keyword location: The geo-location where the resource lives. Required.
+    :paramtype location: str
+    :keyword tags: Resource tags.
+    :paramtype tags: dict[str, str]
+    :keyword properties: The resource-specific properties for this resource.
+    :paramtype properties:
+     ~azure.resourcemanager.commonproperties.models.ManagedIdentityTrackedResourceProperties
+    :keyword identity: The managed service identities assigned to this resource.
+    :paramtype identity: ~azure.resourcemanager.commonproperties.models.ManagedServiceIdentity
     """
 
     properties: Optional["_models.ManagedIdentityTrackedResourceProperties"] = rest_field(
@@ -579,6 +640,13 @@ class ManagedServiceIdentity(_Model):
     :ivar user_assigned_identities: The identities assigned to this resource by the user.
     :vartype user_assigned_identities: dict[str,
      ~azure.resourcemanager.commonproperties.models.UserAssignedIdentity]
+    :keyword type: The type of managed identity assigned to this resource. Required. Known values
+     are: "None", "SystemAssigned", "UserAssigned", and "SystemAssigned,UserAssigned".
+    :paramtype type: str or
+     ~azure.resourcemanager.commonproperties.models.ManagedServiceIdentityType
+    :keyword user_assigned_identities: The identities assigned to this resource by the user.
+    :paramtype user_assigned_identities: dict[str,
+     ~azure.resourcemanager.commonproperties.models.UserAssignedIdentity]
     """
 
     principal_id: Optional[str] = rest_field(name="principalId", visibility=["read"])
@@ -634,6 +702,21 @@ class SystemData(_Model):
      ~azure.resourcemanager.commonproperties.models.CreatedByType
     :ivar last_modified_at: The timestamp of resource last modification (UTC).
     :vartype last_modified_at: ~datetime.datetime
+    :keyword created_by: The identity that created the resource.
+    :paramtype created_by: str
+    :keyword created_by_type: The type of identity that created the resource. Known values are:
+     "User", "Application", "ManagedIdentity", and "Key".
+    :paramtype created_by_type: str or ~azure.resourcemanager.commonproperties.models.CreatedByType
+    :keyword created_at: The timestamp of resource creation (UTC).
+    :paramtype created_at: ~datetime.datetime
+    :keyword last_modified_by: The identity that last modified the resource.
+    :paramtype last_modified_by: str
+    :keyword last_modified_by_type: The type of identity that last modified the resource. Known
+     values are: "User", "Application", "ManagedIdentity", and "Key".
+    :paramtype last_modified_by_type: str or
+     ~azure.resourcemanager.commonproperties.models.CreatedByType
+    :keyword last_modified_at: The timestamp of resource last modification (UTC).
+    :paramtype last_modified_at: ~datetime.datetime
     """
 
     created_by: Optional[str] = rest_field(name="createdBy", visibility=["read", "create", "update", "delete", "query"])

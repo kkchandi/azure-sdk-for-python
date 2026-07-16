@@ -17,6 +17,8 @@ class BoolAsStringProperty(_Model):
 
     :ivar value: Required.
     :vartype value: bool
+    :keyword value: Required.
+    :paramtype value: bool
     """
 
     value: bool = rest_field(visibility=["read", "create", "update", "delete", "query"], format="str")

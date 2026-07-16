@@ -22,6 +22,11 @@ class FirstModel(_Model):
     :vartype status: str or ~client.naming.enumconflict.firstnamespace.models.Status
     :ivar name: Name of the item. Required.
     :vartype name: str
+    :keyword status: Status from first namespace. Required. Known values are: "active" and
+     "inactive".
+    :paramtype status: str or ~client.naming.enumconflict.firstnamespace.models.Status
+    :keyword name: Name of the item. Required.
+    :paramtype name: str
     """
 
     status: Union[str, "_models.Status"] = rest_field(visibility=["read", "create", "update", "delete", "query"])

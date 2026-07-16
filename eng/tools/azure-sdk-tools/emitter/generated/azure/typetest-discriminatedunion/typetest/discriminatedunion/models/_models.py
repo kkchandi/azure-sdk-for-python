@@ -19,6 +19,10 @@ class Cat(_Model):
     :vartype name: str
     :ivar meow: Required.
     :vartype meow: bool
+    :keyword name: Required.
+    :paramtype name: str
+    :keyword meow: Required.
+    :paramtype meow: bool
     """
 
     name: str = rest_field(visibility=["read", "create", "update", "delete", "query"])
@@ -52,6 +56,10 @@ class Dog(_Model):
     :vartype name: str
     :ivar bark: Required.
     :vartype bark: bool
+    :keyword name: Required.
+    :paramtype name: str
+    :keyword bark: Required.
+    :paramtype bark: bool
     """
 
     name: str = rest_field(visibility=["read", "create", "update", "delete", "query"])

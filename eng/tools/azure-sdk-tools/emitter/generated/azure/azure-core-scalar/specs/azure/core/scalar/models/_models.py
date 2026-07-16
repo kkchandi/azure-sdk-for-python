@@ -17,6 +17,8 @@ class AzureLocationModel(_Model):
 
     :ivar location: Required.
     :vartype location: str
+    :keyword location: Required.
+    :paramtype location: str
     """
 
     location: str = rest_field(visibility=["read", "create", "update", "delete", "query"])

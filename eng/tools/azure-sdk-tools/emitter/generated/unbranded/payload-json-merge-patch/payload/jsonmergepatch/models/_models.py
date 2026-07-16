@@ -16,6 +16,10 @@ class InnerModel(_Model):
     :vartype name: str
     :ivar description:
     :vartype description: str
+    :keyword name:
+    :paramtype name: str
+    :keyword description:
+    :paramtype description: str
     """
 
     name: Optional[str] = rest_field(visibility=["read", "create", "update", "delete", "query"])
@@ -59,6 +63,22 @@ class Resource(_Model):
     :vartype inner_model: ~payload.jsonmergepatch.models.InnerModel
     :ivar int_array:
     :vartype int_array: list[int]
+    :keyword name: Required.
+    :paramtype name: str
+    :keyword description:
+    :paramtype description: str
+    :keyword map:
+    :paramtype map: dict[str, ~payload.jsonmergepatch.models.InnerModel]
+    :keyword array:
+    :paramtype array: list[~payload.jsonmergepatch.models.InnerModel]
+    :keyword int_value:
+    :paramtype int_value: int
+    :keyword float_value:
+    :paramtype float_value: float
+    :keyword inner_model:
+    :paramtype inner_model: ~payload.jsonmergepatch.models.InnerModel
+    :keyword int_array:
+    :paramtype int_array: list[int]
     """
 
     name: str = rest_field(visibility=["read", "create", "update", "delete", "query"])
@@ -121,6 +141,20 @@ class ResourcePatch(_Model):
     :vartype inner_model: ~payload.jsonmergepatch.models.InnerModel
     :ivar int_array:
     :vartype int_array: list[int]
+    :keyword description:
+    :paramtype description: str
+    :keyword map:
+    :paramtype map: dict[str, ~payload.jsonmergepatch.models.InnerModel]
+    :keyword array:
+    :paramtype array: list[~payload.jsonmergepatch.models.InnerModel]
+    :keyword int_value:
+    :paramtype int_value: int
+    :keyword float_value:
+    :paramtype float_value: float
+    :keyword inner_model:
+    :paramtype inner_model: ~payload.jsonmergepatch.models.InnerModel
+    :keyword int_array:
+    :paramtype int_array: list[int]
     """
 
     description: Optional[str] = rest_field(visibility=["read", "create", "update", "delete", "query"])
